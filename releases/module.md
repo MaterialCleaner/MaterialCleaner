@@ -1,2 +1,2 @@
-### 0.5
-Add ProcessListHook
+### 0.6
+Refine ProcessListHook and FileSystemHook.
