@@ -1,2 +1,3 @@
-### 0.6
-Refine ProcessListHook and FileSystemHook.
+### 0.7
+Fix that notifyProcessStart is called too often.
+Add intent receiver.
