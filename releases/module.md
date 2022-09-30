@@ -1,3 +1,2 @@
-### 0.7
-Fix that notifyProcessStart is called too often.
-Add intent receiver.
+### 0.8
+Ensure that the application has been mounted when it starts.
