@@ -1,2 +1,3 @@
-### 0.8
-Ensure that the application has been mounted when it starts.
+### 0.9
+Fix that dex opened too much time.
+Fix that failed to init on some devices.
