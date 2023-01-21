@@ -1,3 +1,2 @@
-### 0.9
-Fix that dex opened too much time.
-Fix that failed to init on some devices.
+### 1.0
+Start Cleaner service on boot (if you checked this setting in Cleaner app).
