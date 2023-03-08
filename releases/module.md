@@ -1,3 +1,2 @@
-### 1.1
-Add MediaProviderHook.
-Performance improvement.
+### 1.2
+Add FuseDaemonHook.
