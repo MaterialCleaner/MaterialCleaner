@@ -17,4 +17,4 @@ jobs:
       uses: peter-evans/close-issue@v3
       with:
           labels: |
-            why are you ignoring the template
+            invalid
