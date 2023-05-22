@@ -1,3 +1,2 @@
-### 1.3
-Add hooks for prompts.
-Disable system server remount and unmount.
+### 1.4.7
+Support MediaProvider with package name com.google.android.providers.media.module
