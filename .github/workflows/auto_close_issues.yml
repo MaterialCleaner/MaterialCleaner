@@ -11,9 +11,10 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-    - name: Check if title contains keyword
-      if: contains(github.event.issue.title, '[Bug report]') == false &&
-        contains(github.event.issue.title, '[Feature request]') == false
+    - name: Check if title starts with keywords
+      # https://docs.github.com/zh/actions/learn-github-actions/expressions#startswith
+      if: startsWith(github.event.issue.title, '[Bug report]') == false &&
+          startsWith(github.event.issue.title, '[Feature request]') == false
       uses: peter-evans/close-issue@v3
       with:
           labels: |
