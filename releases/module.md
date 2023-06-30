@@ -1,2 +1,2 @@
-### 1.5
-Switch to inject StorageManagerService.
+### 1.6
+Fix authentication.

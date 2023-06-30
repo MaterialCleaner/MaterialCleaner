@@ -1,6 +1,6 @@
 {
-	"version": "v1.5",
-	"versionCode": 1095,
-	"zipUrl": "https://github.com/MaterialCleaner/MaterialCleaner/releases/download/1.10.3/zygisk_cleanerhooks_v1.5-release.zip",
+	"version": "v1.6",
+	"versionCode": 1154,
+	"zipUrl": "https://github.com/MaterialCleaner/MaterialCleaner/releases/download/1.10.4/zygisk_cleanerhooks_v1.6-release.zip",
 	"changelog": "https://materialcleaner.github.io/MaterialCleaner/releases/module.md"
 }
