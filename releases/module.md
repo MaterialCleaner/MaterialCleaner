@@ -1,2 +1,2 @@
-### 1.6
-Fix authentication.
+### 1.6.1
+Support read only feature.
