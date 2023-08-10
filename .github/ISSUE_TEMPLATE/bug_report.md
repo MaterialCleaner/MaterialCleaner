@@ -36,7 +36,7 @@ Steps to reproduce the behavior:
 4. See error
 
 **Screenshots**
-Add a screenshot of your mount rules.
+Add a screenshot of your mount rules if your issue is about storage redirect feature.
 If applicable, add screenshots to help explain your problem.
 
 **Running environment (please complete the following information):**
