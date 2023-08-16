@@ -1,2 +1,3 @@
-### 1.6.1
-Support read only feature.
+### 1.7
+Support the way to update the media store of sending scan file broadcasts.
+Fix a performance issue.
