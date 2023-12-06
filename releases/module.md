@@ -1,2 +1,2 @@
-### 1.8.3
-- 
+### 1.8.4
+- Fix Android Q, R, S support.
