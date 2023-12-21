@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.gm.cleaner.widget.CheckableLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/screen_edge"
+    android:stateListAnimator="@animator/check_animator">
+
+    <FrameLayout
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/badge_size"
+            android:layout_height="@dimen/badge_size"
+            android:layout_gravity="start|center_vertical"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/apk"
+            android:layout_width="@dimen/icon_size"
+            android:layout_height="@dimen/icon_size"
+            android:contentDescription="@string/apk" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?listPreferredItemPaddingStart"
+        android:layout_weight="1"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceBody1" />
+
+    <TextView
+        android:id="@+id/summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?listPreferredItemPaddingStart"
+        android:maxLines="1"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceBody2"
+        android:textColor="?android:textColorSecondary" />
+</me.gm.cleaner.widget.CheckableLinearLayout>

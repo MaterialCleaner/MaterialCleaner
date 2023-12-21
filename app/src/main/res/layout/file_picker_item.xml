@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.gm.cleaner.widget.CheckableLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="?listPreferredItemHeightSmall"
+    android:orientation="horizontal"
+    android:paddingHorizontal="?dialogPreferredPadding"
+    android:paddingVertical="12dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/badge_size"
+        android:layout_height="@dimen/badge_size"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription"
+        app:tint="?colorControlNormal" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="?dialogPreferredPadding"
+        android:layout_weight="1"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceListItem" />
+</me.gm.cleaner.widget.CheckableLinearLayout>

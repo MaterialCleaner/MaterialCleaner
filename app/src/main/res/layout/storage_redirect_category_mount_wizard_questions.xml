@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/screen_edge"
+        android:text="@string/storage_redirect_question_header"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceBody1" />
+
+    <me.gm.cleaner.widget.expandable.ExpandableLinearLayout
+        android:id="@+id/q_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <me.gm.cleaner.widget.PrimaryTextLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/screen_edge">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@null"
+                android:checked="false"
+                android:clickable="false"
+                android:focusable="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/icon_center_from_screen_edge"
+                android:paddingEnd="@dimen/screen_edge"
+                android:text="@string/storage_redirect_question_1"
+                android:textAlignment="viewStart"
+                android:textAppearance="?textAppearanceBody1" />
+        </me.gm.cleaner.widget.PrimaryTextLinearLayout>
+
+        <me.gm.cleaner.widget.expandable.ExpandableChildLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <me.gm.cleaner.widget.AutoCheckLinearLayout
+                android:id="@+id/q_1_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/content_start_from_screen_edge_minus_screen_edge"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/screen_edge">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/screen_edge"
+                    android:text="@string/storage_redirect_question_1_1"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="?textAppearanceBody1" />
+
+                <me.gm.cleaner.widget.AutoCheckLinearLayout
+                    android:id="@+id/widget_frame1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/screen_edge"
+                    android:orientation="vertical" />
+            </me.gm.cleaner.widget.AutoCheckLinearLayout>
+
+            <me.gm.cleaner.widget.AutoCheckLinearLayout
+                android:id="@+id/q_1_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/content_start_from_screen_edge_minus_screen_edge"
+                android:background="?selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/screen_edge">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingHorizontal="@dimen/screen_edge"
+                    android:text="@string/storage_redirect_question_1_2"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="?textAppearanceBody1" />
+
+                <me.gm.cleaner.widget.AutoCheckLinearLayout
+                    android:id="@+id/widget_frame2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/screen_edge"
+                    android:orientation="vertical" />
+            </me.gm.cleaner.widget.AutoCheckLinearLayout>
+        </me.gm.cleaner.widget.expandable.ExpandableChildLinearLayout>
+    </me.gm.cleaner.widget.expandable.ExpandableLinearLayout>
+
+    <me.gm.cleaner.widget.expandable.ExpandableLinearLayout
+        android:id="@+id/q_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <me.gm.cleaner.widget.PrimaryTextLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/screen_edge">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@null"
+                android:checked="false"
+                android:clickable="false"
+                android:focusable="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/icon_center_from_screen_edge"
+                android:paddingEnd="@dimen/screen_edge"
+                android:text="@string/storage_redirect_question_2"
+                android:textAlignment="viewStart"
+                android:textAppearance="?textAppearanceBody1" />
+        </me.gm.cleaner.widget.PrimaryTextLinearLayout>
+
+        <me.gm.cleaner.widget.expandable.ExpandableChildLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/q_2_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+        </me.gm.cleaner.widget.expandable.ExpandableChildLinearLayout>
+    </me.gm.cleaner.widget.expandable.ExpandableLinearLayout>
+
+    <me.gm.cleaner.widget.expandable.ExpandableLinearLayout
+        android:id="@+id/q_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <me.gm.cleaner.widget.PrimaryTextLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/screen_edge">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@null"
+                android:checked="false"
+                android:clickable="false"
+                android:focusable="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/icon_center_from_screen_edge"
+                android:paddingEnd="@dimen/screen_edge"
+                android:text="@string/storage_redirect_question_3"
+                android:textAlignment="viewStart"
+                android:textAppearance="?textAppearanceBody1" />
+        </me.gm.cleaner.widget.PrimaryTextLinearLayout>
+
+        <me.gm.cleaner.widget.expandable.ExpandableChildLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/content_start_from_screen_edge_minus_screen_edge"
+                    android:padding="@dimen/screen_edge"
+                    android:text="@string/storage_redirect_question_3_1"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="?textAppearanceBody1" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/q_3_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </me.gm.cleaner.widget.expandable.ExpandableChildLinearLayout>
+    </me.gm.cleaner.widget.expandable.ExpandableLinearLayout>
+
+    <me.gm.cleaner.widget.expandable.ExpandableLinearLayout
+        android:id="@+id/q_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <me.gm.cleaner.widget.PrimaryTextLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/screen_edge">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@null"
+                android:checked="false"
+                android:clickable="false"
+                android:focusable="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/icon_center_from_screen_edge"
+                android:paddingEnd="@dimen/screen_edge"
+                android:text="@string/storage_redirect_question_4"
+                android:textAlignment="viewStart"
+                android:textAppearance="?textAppearanceBody1" />
+        </me.gm.cleaner.widget.PrimaryTextLinearLayout>
+
+        <me.gm.cleaner.widget.expandable.ExpandableChildLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/q_4_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </me.gm.cleaner.widget.expandable.ExpandableChildLinearLayout>
+    </me.gm.cleaner.widget.expandable.ExpandableLinearLayout>
+</LinearLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:clipToPadding="false"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:minHeight="?android:listPreferredItemHeightSmall"
+    android:paddingStart="?android:listPreferredItemPaddingLeft"
+    android:paddingLeft="?android:listPreferredItemPaddingLeft"
+    android:paddingEnd="?android:listPreferredItemPaddingRight"
+    android:paddingRight="?android:listPreferredItemPaddingRight">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/icon_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:minWidth="56dp"
+            android:orientation="horizontal"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="4dp">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/storage_redirect_storage_permissions_header"
+                android:src="@drawable/ic_outline_folder_24"
+                app:maxHeight="48dp"
+                app:maxWidth="48dp"
+                app:tint="?colorControlNormal" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/empty"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceListItem" />
+
+            <TextView
+                android:id="@+id/summary"
+                style="@style/PreferenceSummaryTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_alignStart="@+id/title"
+                android:layout_alignLeft="@+id/title"
+                android:maxLines="10"
+                android:textColor="?android:attr/textColorSecondary" />
+        </RelativeLayout>
+
+        <!-- Preference should place its actual preference widget here. -->
+        <LinearLayout
+            android:id="@+id/widget_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:paddingHorizontal="@dimen/card_margin"
+    android:paddingVertical="@dimen/half_card_margin">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/screen_edge">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:minHeight="?listPreferredItemHeightLarge"
+            android:orientation="horizontal"
+            android:padding="@dimen/screen_edge">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/badge_size"
+                android:layout_height="@dimen/badge_size"
+                android:contentDescription="@string/storage_redirect_status_header"
+                android:src="@drawable/ic_baseline_info_24"
+                app:tint="?android:textColorPrimaryInverse" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/abc_dialog_padding_material"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="2dp"
+                    android:text="@string/service_need_upgrade"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="?textAppearanceBody1"
+                    android:textColor="?android:textColorPrimaryInverse" />
+
+                <TextView
+                    android:id="@+id/summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:textAppearance="?textAppearanceBody2"
+                    android:textColor="?android:textColorPrimaryInverse" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

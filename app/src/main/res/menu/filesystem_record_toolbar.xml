@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_outline_search_24"
+        android:title="@android:string/search_go"
+        app:actionViewClass="me.gm.cleaner.widget.FixLayoutSearchView"
+        app:showAsAction="always|collapseActionView"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/menu_view"
+        android:icon="@drawable/outline_filter_list_24"
+        android:title="@string/view"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/menu_header_hide"
+                android:enabled="false"
+                android:title="@string/menu_hide_title"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_hide_pick_apps"
+                android:title="@string/menu_hide_pick_apps"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/menu_hide_app_specific_storage"
+                android:checkable="true"
+                android:title="@string/menu_hide_app_specific_storage"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_filesystem_record_prune_records"
+        android:title="@string/filesystem_record_prune_records"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_filesystem_record_load_all"
+        android:title="@string/filesystem_record_load_all"
+        app:showAsAction="never" />
+</menu>

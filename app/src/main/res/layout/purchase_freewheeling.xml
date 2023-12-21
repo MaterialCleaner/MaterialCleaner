@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="?preferenceHeader"
+        android:text="@string/purchase_service_details_header_freewheeling" />
+
+    <TextView
+        style="?preferenceSummary"
+        android:text="@string/purchase_service_details_summary_read_only" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/screen_edge">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/purchase_service_details_summary_read_only"
+            android:src="@drawable/screenshot_read_only"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.618" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk rootProject.ext.compileSdk
+    defaultConfig {
+        minSdk rootProject.ext.minSdk
+        targetSdk rootProject.ext.targetSdk
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+    namespace 'me.gm.cleaner.api'
+}
+
+dependencies {
+    compileOnly project(':hidden-api-stub')
+    implementation project(':hidden-api-bridge')
+
+    implementation "androidx.annotation:annotation:$rootProject.annotationVersion"
+    implementation "androidx.core:core-ktx:$rootProject.coreVersion"
+}

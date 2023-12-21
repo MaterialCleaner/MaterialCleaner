@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="half_card_margin">6dp</dimen>
+    <dimen name="card_margin">12dp</dimen>
+    <dimen name="screen_edge">24dp</dimen>
+    <dimen name="icon_center_from_screen_edge">36dp</dimen>
+    <dimen name="content_start_from_screen_edge">80dp</dimen>
+    <dimen name="content_start_from_screen_edge_minus_screen_edge">56dp</dimen>
+</resources>

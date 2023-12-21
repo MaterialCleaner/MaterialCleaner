@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frame"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:padding="@dimen/screen_edge">
+
+    <ImageView
+        android:id="@+id/add"
+        android:layout_width="@dimen/badge_size"
+        android:layout_height="@dimen/badge_size"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_outline_add_24" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="start|center_vertical"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceBody1" />
+</FrameLayout>

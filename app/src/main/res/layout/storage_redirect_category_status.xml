@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="?preferenceHeader"
+        android:text="@string/storage_redirect_status_header" />
+
+    <TextView
+        android:id="@+id/summary"
+        style="?preferenceSummary" />
+</LinearLayout>

@@ -1,0 +1,41 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'com.google.devtools.ksp'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk rootProject.ext.compileSdk
+    defaultConfig {
+        minSdk rootProject.ext.minSdk
+        targetSdk rootProject.ext.targetSdk
+        buildConfigField 'int', 'VERSION_CODE', "${rootProject.ext.versionCode}"
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+    namespace 'me.gm.cleaner.server'
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+dependencies {
+    compileOnly project(':hidden-api-stub')
+    implementation project(':aidl')
+    implementation project(':hidden-api-bridge')
+    implementation project(':hidden-system-api')
+    implementation project(':shared')
+    compileOnly 'de.robv.android.xposed:api:82'
+
+    implementation "androidx.annotation:annotation:$rootProject.annotationVersion"
+    implementation "androidx.core:core-ktx:$rootProject.coreVersion"
+    def roomVersion = '2.6.1'
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    ksp "androidx.room:room-compiler:$roomVersion"
+    implementation "com.google.guava:guava:$rootProject.guavaVersion"
+}

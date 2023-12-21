@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_outline_search_24"
+        android:title="@android:string/search_go"
+        app:actionViewClass="me.gm.cleaner.widget.FixLayoutSearchView"
+        app:showAsAction="always|collapseActionView"
+        tools:ignore="AlwaysShowAction" />
+    <item
+        android:id="@+id/menu_view"
+        android:icon="@drawable/outline_filter_list_24"
+        android:title="@string/view"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/menu_header_sort"
+                android:enabled="false"
+                android:title="@string/sort_title"
+                app:showAsAction="never" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/menu_sort_by_name"
+                    android:title="@string/menu_sort_by_name_title" />
+                <item
+                    android:id="@+id/menu_sort_by_update_time"
+                    android:title="@string/menu_sort_by_update_time_title" />
+                <item
+                    android:id="@+id/menu_rule_count"
+                    android:checkable="true"
+                    android:title="@string/menu_rule_count"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/menu_mount_state"
+                    android:checkable="true"
+                    android:title="@string/menu_mount_state"
+                    app:showAsAction="never" />
+            </group>
+            <group android:id="@+id/group_hide">
+                <item
+                    android:id="@+id/menu_header_hide"
+                    android:enabled="false"
+                    android:title="@string/menu_hide_title"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/menu_hide_system_app"
+                    android:checkable="true"
+                    android:title="@string/menu_hide_system_app_title"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/menu_hide_disabled_app"
+                    android:checkable="true"
+                    android:title="@string/menu_hide_disabled_app_title"
+                    app:showAsAction="never" />
+                <item
+                    android:id="@+id/menu_hide_no_storage_permissions"
+                    android:checkable="true"
+                    android:title="@string/menu_hide_no_storage_permissions_title"
+                    app:showAsAction="never" />
+            </group>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_refresh"
+        android:title="@string/refresh"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_logcat"
+        android:title="@string/logcat"
+        app:showAsAction="never" />
+</menu>

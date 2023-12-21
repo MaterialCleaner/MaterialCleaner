@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.gm.cleaner.widget.OrthogonallyNestedCoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="?actionBarSizeAddTabHeight"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="?actionBarSizeAddTabHeight"
+        android:indeterminate="true" />
+
+    <LinearLayout
+        android:id="@+id/warning_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSizeAddTabHeight"
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/screen_edge"
+            android:textAlignment="center"
+            android:textAppearance="?textAppearanceBody2"
+            app:drawableTopCompat="@drawable/ic_outline_error_outline_48" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?textAppearanceBody1" />
+    </LinearLayout>
+</me.gm.cleaner.widget.OrthogonallyNestedCoordinatorLayout>

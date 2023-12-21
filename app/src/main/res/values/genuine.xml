@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="true">
+
+    <string name="unsupported_genuine_0">genuine: pass</string>
+    <string name="unsupported_genuine_1">false: modified</string>
+    <string name="unsupported_genuine_2">fake: signature</string>
+    <string name="unsupported_genuine_3">overlay: third-party resources</string>
+    <string name="unsupported_genuine_4">odex: odex tampering</string>
+    <string name="unsupported_genuine_5">dex: third-party inject</string>
+    <string name="unsupported_genuine_6">proxy: virtual platform</string>
+    <string name="unsupported_genuine_7">error: cannot check</string>
+    <string name="unsupported_genuine_8">fatal: inline hook</string>
+    <string name="unsupported_genuine_9">noapk: no apk</string>
+
+</resources>

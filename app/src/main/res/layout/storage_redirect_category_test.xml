@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/card_margin"
+        android:hint="@string/file_picker_hint"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceBody1" />
+
+    <TextView
+        android:id="@+id/result_mounted_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/card_margin"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceBody1"
+        android:textIsSelectable="true" />
+
+    <TextView
+        android:id="@+id/result_accessible_places"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/card_margin"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceBody1"
+        android:textIsSelectable="true" />
+</LinearLayout>

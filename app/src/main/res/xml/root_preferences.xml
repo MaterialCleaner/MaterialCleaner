@@ -1,0 +1,128 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/enable_features_header">
+
+        <SwitchPreferenceCompat
+            android:icon="@drawable/ic_outline_start_24"
+            android:key="@string/start_on_boot_key"
+            android:summary="@string/start_on_boot_summary"
+            android:title="@string/start_on_boot_title" />
+
+        <SwitchPreferenceCompat
+            android:icon="@drawable/ic_outline_update_24"
+            android:key="@string/post_notification_key"
+            android:title="@string/post_notification_title" />
+
+        <SwitchPreferenceCompat
+            android:icon="@drawable/ic_outline_standard_folder_24"
+            android:key="@string/nonpublic_key"
+            android:summary="@string/nonpublic_summary"
+            android:title="@string/nonpublic_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/scan_header"
+        android:title="@string/scan_header"
+        app:initialExpandedChildrenCount="2">
+
+        <EditTextPreference
+            android:icon="@drawable/ic_outline_no_check_24"
+            android:key="@string/no_tick_key"
+            android:summary="@string/no_tick_summary"
+            android:title="@string/no_tick_title" />
+
+        <me.gm.cleaner.settings.PathListPreference
+            android:icon="@drawable/ic_outline_block_24"
+            android:key="@string/no_scan_key"
+            android:title="@string/no_scan_title" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:icon="@drawable/ic_outline_android_24"
+            android:key="@string/scan_system_app_key"
+            android:title="@string/scan_system_app_title" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:icon="@drawable/ic_outline_confirm_24"
+            android:key="@string/confirm_delete_key"
+            android:title="@string/confirm_delete_title" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:icon="@drawable/ic_outline_autorenew_24"
+            android:key="@string/monitor_key"
+            android:summary="@string/monitor_summary"
+            android:title="@string/monitor_title" />
+
+        <EditTextPreference
+            android:defaultValue="50000"
+            android:icon="@drawable/baseline_maximize_24"
+            android:inputType="number"
+            android:key="@string/maximize_key"
+            android:summary="@string/maximize_summary"
+            android:title="@string/maximize_title" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:icon="@drawable/ic_outline_size_24"
+            android:key="@string/length_key"
+            android:summary="@string/length_summary"
+            android:title="@string/length_title" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:dependency="@string/length_key"
+            android:icon="@drawable/ic_outline_sort_24"
+            android:key="@string/sort_key"
+            android:summaryOff="@string/sort_summary_off"
+            android:summaryOn="@string/sort_summary_on"
+            android:title="@string/sort_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/language_header">
+
+        <rikka.preference.SimpleMenuPreference
+            android:defaultValue="SYSTEM"
+            android:entries="@array/language"
+            android:entryValues="@array/language_value"
+            android:icon="@drawable/ic_outline_translate_24"
+            android:key="@string/language_key"
+            android:summary="%s"
+            android:title="@string/language_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/theme_header">
+
+        <me.gm.cleaner.settings.theme.ThemeColorPreference
+            android:defaultValue=""
+            android:dependency="@string/theme_m3_key"
+            android:dialogTitle="@string/theme_color_title"
+            android:icon="@drawable/ic_outline_palette_24"
+            android:key="@string/theme_color_key"
+            android:summary="@string/theme_color_summary"
+            android:title="@string/theme_color_title" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:disableDependentsState="true"
+            android:icon="@drawable/outline_format_paint_24"
+            android:key="@string/theme_m3_key"
+            android:title="@string/theme_m3_title" />
+
+        <rikka.preference.SimpleMenuPreference
+            android:defaultValue="MODE_NIGHT_FOLLOW_SYSTEM"
+            android:entries="@array/theme_texts"
+            android:entryValues="@array/theme_values"
+            android:icon="@drawable/ic_outline_dark_mode_24"
+            android:key="@string/dark_theme_key"
+            android:summary="%s"
+            android:title="@string/dark_theme_title" />
+
+        <SwitchPreferenceCompat
+            android:key="@string/black_dark_theme_key"
+            android:title="@string/black_dark_theme_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

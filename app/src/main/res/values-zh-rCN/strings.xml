@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主页 -->
+    <string name="app_name">质感清理</string>
+    <string name="delimiter">、</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="update">更新</string>
+    <string name="new_version">质感清理 %s 已发布</string>
+    <string name="manual_tools">手动工具</string>
+    <string name="application_data">应用数据</string>
+    <string name="cache">缓存文件</string>
+    <string name="temp">临时文件</string>
+    <string name="log">日志文件</string>
+    <string name="nonpublic">非标准文件夹</string>
+    <string name="apk">安装包</string>
+    <string name="small">小文件</string>
+    <string name="empty">空文件夹</string>
+    <string name="loading">正在加载…</string>
+    <string name="network_connection_failed">网络连接失败</string>
+    <string name="rationale_shouldShowRationale">%s需要写入外部存储空间权限</string>
+    <string name="rationale_permanentlyDenied">%s需要写入外部存储空间权限，请在应用信息中手动授予</string>
+    <string name="rationale_external_storage_manager">%s需要所有文件访问权限，请在下个页面中授予</string>
+
+    <!-- 菜单 -->
+    <string name="action_start_or_stop">启动/停止 Cleaner 服务</string>
+    <string name="settings">设置</string>
+    <string name="help">帮助</string>
+    <string name="contact">联系</string>
+    <string name="contact_message_googleplay">您可以通过以下方式联系我们，订单问题请优先使用电子邮件，应用问题请优先使用 GitHub 或者 Telegram。</string>
+    <string name="contact_message_github">您可以通过以下方式联系我们，订单问题请优先使用电子邮件，应用问题请优先使用 GitHub 或者 QQ 频道。</string>
+    <string name="email">电子邮件</string>
+    <string name="qq_channel">QQ 频道</string>
+    <string name="purchase">购买</string>
+    <string name="about">关于</string>
+    <string name="view">查看</string>
+    <string name="menu_sort_by_name_title">应用名</string>
+    <string name="menu_sort_by_update_time_title">更新时间</string>
+    <string name="menu_rule_count">启用规则的优先</string>
+    <string name="menu_mount_state">挂载状态</string>
+    <string name="menu_hide_title">隐藏</string>
+    <string name="menu_hide_system_app_title">系统应用</string>
+    <string name="menu_hide_disabled_app_title">已禁用应用</string>
+    <string name="menu_hide_no_storage_permissions_title">无存储权限应用</string>
+    <string name="menu_hide_pick_apps">选择应用</string>
+    <string name="menu_batch_operation">批量操作</string>
+    <string name="menu_select_all">全选</string>
+    <string name="menu_invert_selection">反选</string>
+    <string name="menu_unselect_all">全不选</string>
+    <string name="menu_hide_app_specific_storage">应用专属存储空间</string>
+    <string name="refresh">刷新</string>
+    <string name="logcat">抓取日志</string>
+    <string name="menu_open">打开</string>
+    <string name="menu_copy">复制</string>
+    <string name="menu_no_tick">不再默认勾选</string>
+    <string name="menu_no_scan">不再扫描此处</string>
+    <string name="menu_add_to_hide_list">加入隐藏列表</string>
+    <string name="delete">删除</string>
+    <string name="delete_all_mount_rules">删除所有挂载规则</string>
+    <string name="delete_all_read_only">删除所有只读</string>
+    <string name="save">保存</string>
+    <string name="quit_without_save">更改未保存，您确定要退出吗？</string>
+    <string name="undo">撤销</string>
+
+    <!-- 设置 -->
+    <string name="enable_features_header">启用特性</string>
+    <string name="start_on_boot_title">开机启动 Cleaner 服务</string>
+    <string name="start_on_boot_summary">启用前请确保服务能在您的设备上正常工作</string>
+    <string name="post_notification_title">接收更新通知</string>
+    <string name="nonpublic_summary">主要用于清理存储重定向侧漏的文件，非存储重定向类软件用户不建议开启</string>
+    <string name="scan_header">扫描</string>
+    <string name="no_tick_title">不勾选</string>
+    <string name="no_tick_summary">根据输入的正则表达式匹配路径，匹配的条目不会默认勾选</string>
+    <string name="no_scan_title">不扫描</string>
+    <string name="length_title">显示文件（夹）大小</string>
+    <string name="length_summary">关闭可提高扫描速度，不过文件大小是判断能否安全删除的一个很好的参考，您需要自行权衡利弊</string>
+    <string name="sort_title">排序方式</string>
+    <string name="sort_summary_off">扫描顺序</string>
+    <string name="sort_summary_on">大小</string>
+    <string name="monitor_title">自动重新扫描</string>
+    <string name="monitor_summary">使用 inotify 监听共享存储空间，当文件变化时执行增量扫描。监听的文件数目大于 8192 时会失效</string>
+    <string name="maximize_title">扫描结果最大数目</string>
+    <string name="maximize_summary">防止内存不足错误</string>
+    <string name="confirm_delete_title">删除前显示确认对话框</string>
+    <string name="scan_system_app_title">扫描系统应用</string>
+    <string name="language_header">语言</string>
+    <string name="language_title">语言</string>
+    <string name="theme_header">主题</string>
+    <string name="theme_color_title">主题色</string>
+    <string name="theme_color_summary">应用中最常见的颜色</string>
+    <string name="theme_m3_title">质感设计 3</string>
+    <string name="dark_theme_title">深色主题</string>
+    <string name="dark_theme_off">总是关闭</string>
+    <string name="dark_theme_on">总是开启</string>
+    <string name="follow_system">跟随系统</string>
+    <string name="black_dark_theme_title">黑色主题</string>
+
+    <!-- 服务更多选项 -->
+    <string name="require_zygisk_module">此功能需要安装 Zygisk 模块，并在 LSPosed 中激活质感清理</string>
+    <string name="cleanup_title">清理</string>
+    <string name="automatic_cleanup_title">自动清理</string>
+    <string name="enable_relatime_title">（实验性）启用相对访问时间</string>
+    <string name="enable_relatime_summary">启用文件系统的相对访问时间功能，这能帮助清理应用最大限度地筛选可以删除的文件，同时避免删除频繁使用的文件。不过，这会略微降低文件系统的性能</string>
+    <string name="open_wizard_by_default_title">默认打开向导</string>
+    <string name="share_title">分享</string>
+    <string name="import_title">导入</string>
+    <string name="edit_mount_rules_template_title">编辑挂载规则模板</string>
+    <string name="apply_mount_rules_template_to_title">将挂载规则模板应用到…</string>
+    <string name="edit_read_only_template_title">编辑只读模板</string>
+    <string name="apply_read_only_template_to_title">将只读模板应用到…</string>
+    <string name="add_read_only_template">添加只读模板到此应用</string>
+    <string name="apply_template_on_package_added_title">自动应用挂载规则模板到新应用</string>
+    <string name="applied_template_to_package">已将模板应用到 %s</string>
+    <string name="aggressively_prompt_for_reading_media_files_title">激进地提示读取媒体文件</string>
+    <string name="aggressively_prompt_for_reading_media_files_summary">会出现很多不必要的提示，不过如果您对存储重定向功能还不熟悉，开启有助于减少意外问题</string>
+    <string name="auto_logging_title">自动抓取开关机日志并自动救砖</string>
+    <string name="auto_logging_summary">存储卷挂载异常时自动禁用 Zygisk 模块</string>
+    <string name="apps_type_marks_title">在线应用类型标记</string>
+    <string name="apps_type_marks_summary">为“根据文件系统记录自动填写”和“自动应用挂载规则模板到新应用”提供依据</string>
+    <string name="apps_type_marks_repo_header">在线库</string>
+    <string name="apps_type_marks_repo_title">仓库地址</string>
+    <string name="apps_type_marks_repo_summary">请求 URL 为您设定的地址 + 应用包名 + .yml</string>
+    <string name="apps_type_marks_refresh_title">刷新缓存</string>
+    <string name="upload_apps_type_marks_title">上传应用类型标记到默认在线库</string>
+    <string name="upload_apps_type_marks_hint">%s 被标记为%s应用。\n标记路径为：\n%s</string>
+    <string name="apps_type_marks_repo_correct_errors_title">纠正错误</string>
+    <string name="apps_type_marks_repo_correct_errors_summary">此操作不能在应用内进行。您需要复刻（Fork）仓库，然后编辑标记文件以修正问题，最后拉取请求（Pull requests）。点击可以打开仓库</string>
+    <string name="auto_complete_by_record_merge_title">以合并方式填写</string>
+    <string name="auto_complete_by_record_respect_title">尊重在线库</string>
+    <string name="apply_online_rules_to_title">将在线规则应用到…</string>
+    <string name="apply_online_rules_to_summary">如果您确定在线库中有某个应用的规则而这里没有，请点击上方的刷新缓存</string>
+    <string name="record_shared_storage_title">记录共享存储空间中的文件操作</string>
+    <string name="record_external_app_specific_storage_title">（实验性）记录外部应用专属存储空间中的文件操作</string>
+    <string name="record_external_app_specific_storage_summary">使应用通过 FUSE 访问其专属存储空间，会使得性能显著下降</string>
+    <string name="upsert_title">使用 upsert 保存数据</string>
+    <string name="upsert_summary">重复的数据只保留最新的一份</string>
+    <string name="storage_redirect_prompt">存储重定向提示</string>
+    <string name="add_mount_rule_to_fix_prompt">是否需要添加这些挂载规则以解决此问题？</string>
+    <string name="migrate_file">迁移文件</string>
+    <string name="no_prompt_for_this_app">对此应用不再提示</string>
+    <string name="prompt_redirected_to_internal">受存储重定向影响，%1$s 将媒体文件保存到了私有路径 %2$s</string>
+    <string name="prompt_redirect_to_internal_not_allowed">您的存储重定向设置试图让 %1$s 的媒体文件保存到私有路径 %2$s，然而这是不被系统允许的</string>
+    <string name="prompt_media_not_found">受存储重定向影响，%1$s 无法读取媒体文件 %2$s</string>
+    <string name="prompt_media_not_found_aggressively">%1$s 可能正受存储重定向影响无法读取媒体文件 %2$s，您看到此提示是因为您启用了服务设置-更多选项-激进地提示读取媒体文件</string>
+
+    <!-- 服务 -->
+    <string name="start_cleaner_service">启动 Cleaner 服务</string>
+    <string name="confirm_exit">停止 Cleaner 服务？</string>
+    <string name="confirm_exit_restart">重新启动</string>
+    <string name="no_root_access">无法访问 root</string>
+    <string name="time_out">启动服务超时，将此日志发送给开发者也许能得到帮助</string>
+    <string name="service_running">服务运行中</string>
+    <string name="service_need_upgrade">服务需升级</string>
+    <string name="service_zygisk_need_upgrade">Zygisk 模块需升级</string>
+    <string name="service_exception">服务环境异常</string>
+    <string name="service_exception_logcat_shutdown">日志猫已退出，请重启 Cleaner 服务</string>
+    <string name="service_exception_no_am_log">没有活动管理器日志，存储重定向无法正常工作（如果刚启动服务请忽略）</string>
+    <string name="service_exception_binder_dead">系统服务崩溃（如果未安装 Zygisk 模块请忽略）</string>
+    <string name="unaddressed_logs">/data/adb/modules/zygisk_cleanerhooks/logs.zip 存在未处理的日志</string>
+    <string name="storage_volumes_mount_exception">存储卷挂载异常（如果刚开机请忽略）</string>
+    <string name="server_version">服务版本：%d%s</string>
+    <string name="zygisk_module_version">\nZygisk 模块版本：%d</string>
+    <string name="service_settings">服务设置</string>
+    <string name="file_picker_title">选择文件</string>
+    <string name="file_picker_unselected">选定的文件</string>
+    <string name="file_picker_hint">路径</string>
+    <string name="file_picker_error_starts_with">非 %s 中的路径</string>
+    <string name="file_picker_error_format">格式错误</string>
+    <string name="enabled">已启用 %s</string>
+    <plurals name="enabled_rule_count">
+        <item quantity="other">%d 条规则</item>
+    </plurals>
+    <string name="enabled_mount_rules_count">%d 条挂载规则</string>
+    <string name="enabled_read_only_count">%d 条只读</string>
+    <string name="storage_redirect_title">存储重定向</string>
+    <string name="storage_redirect_unsupported">免费版暂不支持安卓 %s</string>
+    <string name="storage_redirect_list_mounted">已挂载</string>
+    <string name="storage_redirect_list_unknown">未知状态</string>
+    <string name="storage_redirect_list_mount_exception">挂载异常</string>
+    <string name="certification_revalidating">正在重新验证许可</string>
+    <string name="free_version">免费版</string>
+    <string name="require_enable_in_lsp">请在 LSPosed 中激活质感清理并重启系统</string>
+    <plurals name="uninstalled_package">
+        <item quantity="other">%s 已卸载，是否立即删除它（们）的设置？</item>
+    </plurals>
+    <string name="storage_redirect_not_saved">未保存</string>
+    <string name="storage_redirect_status_header">运行状态</string>
+    <string name="storage_redirect_status_summary_prefix">此应用正在运行，其进程 id：%s。</string>
+    <string name="storage_redirect_status_summary_suffix_mounted">已为所有进程挂载 \uD83D\uDE0B\ </string>
+    <plurals name="storage_redirect_status_summary_suffix_not_mounted">
+        <item quantity="other">由于%s，%s 中挂载状态异常 \uD83E\uDD14\ </item>
+    </plurals>
+    <string name="storage_redirect_status_not_mounted_startup_unaware">未侦测到进程启动</string>
+    <string name="storage_redirect_status_not_mounted_dir_deleted">挂载的文件系统（来源）被删除</string>
+    <string name="storage_redirect_status_not_mounted_mkdir_failed">创建挂载文件夹失败</string>
+    <string name="storage_redirect_status_not_mounted_unknown">无法检查挂载状态</string>
+    <string name="storage_redirect_status_not_mounted_mount_failed">挂载失败</string>
+    <string name="storage_redirect_status_not_mounted_remount">重新挂载</string>
+    <string name="storage_redirect_status_summary_troubleshoot_mount_exception">您可以参考 GitHub wiki 上的说明来排查这些挂载异常问题</string>
+    <string name="storage_redirect_confirm_media">您不应对此应用使用存储重定向。如果您一定要尝试，请确认已做好救砖准备。对于媒体存储的管理，您可以考虑使用我们开发的 Xposed 模块，它是开源免费的。</string>
+    <string name="storage_redirect_warn_system">此应用是系统应用，错误的挂载规则会造成严重问题</string>
+    <string name="storage_redirect_warn_no_storage_permissions">此应用未声明所有文件访问权限，它只能写入标准文件夹</string>
+    <string name="storage_redirect_warn_denylist">此应用在 Magisk 的排除列表中，应用刚启动的短时间内存储重定向不会生效</string>
+    <string name="storage_redirect_warn_shared_userid">此应用与 %2$s 共享 uid %1$s。建议您允许此应用直接访问上述应用的专属存储空间，以免破坏此应用的相关功能</string>
+    <string name="storage_redirect_warn_shared_proc">此应用与 %2$s 共享进程 %1$s。它们的挂载规则会被自动同步</string>
+    <string name="storage_redirect_mount_header">挂载规则</string>
+    <string name="storage_redirect_mount_summary">挂载将来源指定的文件系统附加到目标路径名指定的位置。</string>
+    <string name="storage_redirect_source_title">来源</string>
+    <string name="storage_redirect_target_title">目标</string>
+    <string name="storage_redirect_read_only_header">只读</string>
+    <string name="storage_redirect_read_only_summary">对于指定的路径，应用不可以在该位置或其下一级创建文件夹或文件，可以打开文件。</string>
+    <string name="storage_redirect_apps_type_marks_err">类型非法，请检查您的标记文件。</string>
+    <string name="storage_redirect_apps_type_marks_hint">此应用被标记为%s应用。\n%s\n%s\n默认设置下，根据文件系统记录自动填写功能会考虑上述事项。</string>
+    <string name="storage_redirect_apps_type_marks_default_repo_hint">\n请注意，默认的在线库并非总是正确的，如果有必要，您可以纠正错误或者自建仓库。</string>
+    <string name="storage_redirect_common_type">普通</string>
+    <string name="storage_redirect_common_rationale">您只需接受提示应用读取、保存媒体文件时应用提供的挂载规则建议即可完成所有编辑。</string>
+    <string name="storage_redirect_download_type">下载</string>
+    <string name="storage_redirect_download_rationale">您可以尝试在“改变应用所看到的文件层次结构”中的来源填写您指定的下载路径，目标填写以下路径：</string>
+    <string name="storage_redirect_all_files_access_type">所有文件访问</string>
+    <string name="storage_redirect_all_files_access_rationale">您恐怕不宜勾选“应用不需要访问外部存储空间中的所有文件”选项。您可以尝试在“不可访问的路径”中填写以下路径：</string>
+    <string name="storage_redirect_dir_operation_recommendation">是否需要执行这些推荐的文件操作？</string>
+    <string name="storage_redirect_move_dir">移动 %s → %s</string>
+    <string name="storage_redirect_copy_dir">复制 %s → %s</string>
+    <string name="storage_redirect_read_only_paths_inaccessible">挂载规则没有允许访问以下被设为只读的路径：\n%s\n应用将无法访问这些路径，您确定要保存吗？</string>
+    <string name="storage_redirect_remount_instantly">应用运行中，是否重新挂载以尝试解决挂载异常？</string>
+    <string name="storage_redirect_forcestop_instantly">应用运行中，是否强行停止以尝试解决挂载异常？</string>
+    <string name="storage_redirect_no_mount_rules">还没有挂载规则。</string>
+    <string name="storage_redirect_follow_wizard">跟随向导创建挂载规则</string>
+    <string name="storage_redirect_manual">手动创建挂载规则</string>
+    <string name="storage_redirect_question_header">您想要创建怎样的规则？</string>
+    <string name="storage_redirect_question_1">应用不需要访问外部存储空间中的所有文件</string>
+    <string name="storage_redirect_question_1_1">应用会在共享存储空间保存有用的数据</string>
+    <string name="storage_redirect_question_1_2">应用使用 obb 文件夹</string>
+    <string name="storage_redirect_question_2">可直接访问的文件夹</string>
+    <string name="storage_redirect_question_3">改变应用所看到的文件层次结构</string>
+    <string name="storage_redirect_question_3_1">来源、目标</string>
+    <string name="storage_redirect_question_4">不可访问的路径</string>
+    <string name="auto_complete_by_record">根据文件系统记录自动填写</string>
+    <string name="auto_complete_by_record_rationale_title">已根据 %d 条记录自动填写向导</string>
+    <string name="auto_complete_by_record_rationale_content_header">根据以下记录填写%s</string>
+    <string name="submit">提交</string>
+    <string name="storage_redirect_test">测试挂载规则</string>
+    <string name="storage_redirect_test_result_mounted_path">当应用访问该路径时，实际访问的路径是 %s</string>
+    <string name="storage_redirect_test_result_accessible_places">应用可通过访问 %s 来访问该路径</string>
+    <string name="storage_redirect_test_result_inaccessible">应用无法访问该路径</string>
+    <string name="storage_redirect_storage_permissions_header">存储权限</string>
+    <string name="storage_redirect_storage_permissions_read">读取外部存储空间</string>
+    <string name="storage_redirect_storage_permissions_write">写入外部存储空间</string>
+    <string name="storage_redirect_storage_permissions_manage">管理外部存储空间</string>
+    <string name="storage_redirect_storage_permissions_granted">允许</string>
+    <string name="storage_redirect_storage_permissions_denied">拒绝</string>
+    <string name="storage_redirect_storage_permissions_ignored">忽略</string>
+    <string name="filesystem_record_title">文件系统记录</string>
+    <string name="filesystem_record_activation_instruction">启用须知\n此功能可以记录应用的文件操作，有利于降低本应用的使用难度。但是出于实现方式原因，它有一些“副作用”，具体可以在 GitHub wiki 上查看。\n如果开启此功能后某个应用受到了“副作用”的显著影响，请把它<b>加入隐藏列表</b>，这样它就能恢复。</string>
+    <string name="filesystem_record_enable">启用文件系统记录</string>
+    <string name="filesystem_record_database_too_large">数据库文件太大，加载可能导致应用出现异常</string>
+    <string name="filesystem_record_database_load_anyway">仍然加载</string>
+    <string name="filesystem_record_prune_records">精简记录</string>
+    <string name="filesystem_record_database_size">%d 条记录，数据库大小 %s</string>
+    <string name="filesystem_record_clear">删除所有记录</string>
+    <string name="filesystem_record_app_specific_storage">删除应用专属存储空间记录</string>
+    <string name="filesystem_record_uninstalled_apps">删除已卸载应用的记录</string>
+    <string name="filesystem_record_distinct">删除重复的旧记录</string>
+    <string name="filesystem_record_queried">删除当前查询出的记录</string>
+    <string name="filesystem_record_load_all">加载剩余全部记录</string>
+    <string name="filesystem_record_flags_create">创建%s %s</string>
+    <string name="filesystem_record_flags_open">打开%s %s</string>
+    <string name="filesystem_record_flags_delete">删除%s %s</string>
+    <string name="filesystem_record_flags_move_from">移动%s自 %s</string>
+    <string name="filesystem_record_flags_move_to">移动%s至 %s</string>
+    <string name="filesystem_record_flags_file">文件</string>
+    <string name="filesystem_record_flags_dir">文件夹</string>
+
+    <!-- 工人 -->
+    <string name="deleting">正在删除 %s</string>
+    <string name="failed_to_delete">删除 %s 失败</string>
+    <string name="failed_to_move_copy">%s 失败</string>
+    <string name="creating_snapshot">正在创建 %s 的快照</string>
+    <string name="failed_to_create_snapshot">创建 %s 的快照失败</string>
+
+    <!-- 手动工具 -->
+    <string name="explore">探索</string>
+    <string name="free_space_of_total_storage_label">剩余 %1$s，共 %2$s</string>
+    <string name="browser">浏览器</string>
+    <string name="snapshot">快照</string>
+    <string name="create_backup">创建备份</string>
+    <string name="manage_backup_and_recycle_bin">管理备份和回收站</string>
+    <string name="machine_learning">机器学习</string>
+    <!--    自定义清理：使用机器学习扫描指定文件夹</string>-->
+
+    <!-- 剩余空间 -->
+    <!--    <string name="app_usage_rationale">需要使用情况访问权限</string>-->
+
+    <!-- 浏览器 -->
+    <string name="rationale_browsing_files">浏览文件</string>
+    <string name="bookmarks">书签</string>
+    <string name="add_to_bookmarks">添加到书签</string>
+    <string name="browser_go_to">跳转到…</string>
+    <string name="browser_sort_by_name">名称</string>
+    <string name="browser_sort_by_size">大小</string>
+    <string name="browser_sort_by_time">时间</string>
+    <string name="browser_sort_by_dirs_first">文件夹优先</string>
+    <string name="start_creating_snapshot">开始创建快照</string>
+    <plurals name="file_count">
+        <item quantity="other">%d个文件</item>
+    </plurals>
+    <plurals name="dir_count">
+        <item quantity="other">%d个文件夹</item>
+    </plurals>
+    <string name="file_dir_count_time">%s，%s，%s</string>
+
+    <!-- 管理备份和回收站 -->
+    <!--    <string name="snapshot_diff">对比</string>-->
+    <!--    <string name="a">生成机器学习训练数据需要使用情况访问权限</string>-->
+
+    <!--  生成机器学习的训练数据  -->
+    <!--  应用未被授予使用情况访问权限，因此无法生成机器学习的训练数据  -->
+    <!--    <string name="how_to_train_model">您想要如何训练模型？</string>-->
+
+    <!-- 机器学习 -->
+    <!--    <string name="how_to_train_model">您想要如何训练模型？</string>-->
+    <!--    <string name="shared">从共享的权重开始，并匿名共享训练数据（训练数据不包含文件内容）</string>-->
+    <!--    <string name="standalone">从零开始，不共享训练数据</string>-->
+
+    <!-- 垃圾 -->
+    <string name="rationale_scanning_files">扫描文件</string>
+    <string name="not_found">没有%s</string>
+    <string name="maximum_reached">由于结果数目达到您设定的最大值，扫描已提前结束</string>
+    <string name="trash_toolbar_title">%d 个%s</string>
+    <string name="trash_toolbar_title_cleaning">清理中…</string>
+    <string name="trash_toolbar_subtitle_prefix">已选择 %d</string>
+    <string name="trash_toolbar_subtitle_suffix">，共 %s</string>
+    <string name="in_use">使用中</string>
+    <string name="copied">已复制：%s</string>
+    <string name="standard_dir">已创建标准文件夹</string>
+    <string name="recommend_rescan">共享存储空间中的文件已发生变化，当前展示的结果可能与实际情况不符</string>
+    <string name="rescan">重新扫描</string>
+    <string name="confirm_delete">删除这些文件？</string>
+
+    <!-- 购买 -->
+    <string name="purchase_unavailable_button">不可用</string>
+    <string name="purchase_subscribe_card_title">订阅所有功能</string>
+    <string name="purchase_subscribe_card_summary">质感清理是一个免费增值应用，付费能使我们将它维护得更好，感谢您的赞助。</string>
+    <string name="purchase_subscribe_card_button">订阅</string>
+    <string name="subscribing">订阅中</string>
+    <string name="purchased">已购买</string>
+    <string name="purchase_cleanup_card_title">清理</string>
+    <string name="purchase_cleanup_card_summary">未完成，请勿以支持开发以外的理由购买</string>
+    <string name="purchase_service_card_title">Cleaner 服务</string>
+    <string name="purchase_service_card_summary">查看高级版本功能介绍</string>
+    <string name="purchase_service_details_header_freewheeling">从心所欲</string>
+    <string name="purchase_service_details_summary_read_only">支持只读功能</string>
+    <string name="purchase_service_details_header_handy">得心应手</string>
+    <string name="purchase_service_details_summary_retrodict_answers">支持根据挂载规则反推规则制作向导的填写内容</string>
+    <string name="purchase_service_details_summary_open_wizard_by_default">支持设置默认打开向导</string>
+    <string name="purchase_service_details_summary_remount">支持重新挂载</string>
+    <string name="purchase_service_details_summary_dir_operation_recommendation">挂载规则变更时提供通过差分算法求出的数据迁移建议</string>
+    <string name="purchase_service_details_summary_prompt_mount_rules">提示应用读取、保存媒体文件时提供挂载规则建议</string>
+    <string name="purchase_service_details_header_pithy">去芜存菁</string>
+    <string name="purchase_service_details_summary_upsert">文件系统记录支持使用 upsert 保存数据</string>
+    <string name="purchase_service_details_summary_prune_records">精简文件系统记录增加多种精简方案</string>
+
+    <!-- 结算 -->
+    <string name="install_from_play">请注意，只有从 Play 商店获取本应用才能进行交易</string>
+    <string name="billing_connecting">正在连接服务器</string>
+    <string name="billing_connect_failed">连接服务器失败\n%s</string>
+    <string name="retry">重试</string>
+    <string name="acknowledging">确认中，请勿离开此页面</string>
+    <string name="purchase_success">结算成功，部分功能在重启应用后生效</string>
+    <string name="purchase_failure_billing">结算失败，请点击购买重试（无需再次付款），若始终无法成功，会在 48 小时后自动退款</string>
+
+    <!-- 关于 -->
+    <string name="slogan">质感设计的清理应用</string>
+    <string name="version">版本</string>
+    <string name="privacy_policy">隐私权政策</string>
+    <string name="developer">作者</string>
+    <string name="licenses">开源许可证</string>
+</resources>

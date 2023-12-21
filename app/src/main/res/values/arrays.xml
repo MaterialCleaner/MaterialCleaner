@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <array name="recommend_package" tools:ignore="InconsistentArrays">
+        <item>com.android.providers.media</item>
+    </array>
+
+    <string-array name="language" translatable="false">
+        <item>@string/follow_system</item>
+        <item>en</item>
+        <item>zh-Hans</item>
+        <item>zh-Hant</item>
+    </string-array>
+
+    <string-array name="language_value" translatable="false">
+        <item>SYSTEM</item>
+        <item>en-US</item>
+        <item>zh-CN</item>
+        <item>zh-TW</item>
+    </string-array>
+
+    <string-array name="theme_texts" translatable="false">
+        <item>@string/dark_theme_off</item>
+        <item>@string/dark_theme_on</item>
+        <item>@string/follow_system</item>
+    </string-array>
+
+    <string-array name="theme_values" translatable="false">
+        <item>MODE_NIGHT_NO</item>
+        <item>MODE_NIGHT_YES</item>
+        <item>MODE_NIGHT_FOLLOW_SYSTEM</item>
+    </string-array>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.gm.cleaner.widget.OrthogonallyNestedCoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <me.gm.cleaner.widget.ThemedTabBorderSwipeRefreshLayout
+        android:id="@+id/list_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:enabled="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="?actionBarSizeAddTabHeight"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </me.gm.cleaner.widget.ThemedTabBorderSwipeRefreshLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="?actionBarSizeAddTabHeight"
+        android:fitsSystemWindows="true"
+        android:indeterminate="true" />
+</me.gm.cleaner.widget.OrthogonallyNestedCoordinatorLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- changed: fix rtl & title textAppearance -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/mal_baseline_half"
+    android:paddingLeft="@dimen/mal_baseline_half"
+    android:paddingTop="@dimen/mal_baseline_half"
+    android:paddingEnd="@dimen/mal_baseline"
+    android:paddingRight="@dimen/mal_baseline"
+    android:paddingBottom="@dimen/mal_baseline_half">
+
+    <ImageView
+        android:id="@+id/mal_item_image"
+        android:layout_width="@dimen/mal_title_item_image_size"
+        android:layout_height="@dimen/mal_title_item_image_size"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/mal_baseline_half"
+        android:layout_marginLeft="@dimen/mal_baseline_half"
+        android:layout_marginEnd="@dimen/mal_baseline_half"
+        android:layout_marginRight="@dimen/mal_baseline_half"
+        android:adjustViewBounds="false"
+        android:contentDescription="@null"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mal_item_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mal_baseline_half"
+            android:layout_marginLeft="@dimen/mal_baseline_half"
+            android:textAlignment="viewStart"
+            android:textAppearance="?attr/textAppearanceTitleLarge"
+            tools:text="App Name" />
+
+        <TextView
+            android:id="@+id/mal_item_desc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/mal_baseline_half"
+            android:layout_marginLeft="@dimen/mal_baseline_half"
+            android:layout_marginTop="-4dp"
+            android:textAlignment="viewStart"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?android:textColorSecondary"
+            tools:text="Copyright Me" />
+
+    </LinearLayout>
+
+</LinearLayout>

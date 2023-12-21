@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mtrl_picker_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    android:baselineAligned="false"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/mtrl_calendar_header_content_padding"
+    android:paddingLeft="@dimen/mtrl_calendar_header_content_padding"
+    android:paddingEnd="@dimen/mtrl_calendar_header_content_padding"
+    android:paddingRight="@dimen/mtrl_calendar_header_content_padding"
+    android:paddingBottom="@dimen/card_margin">
+
+    <!--  Workaround to make keyboard shown for mtrl_picker_text_input_date.  -->
+    <me.gm.cleaner.widget.EditableText
+        android:id="@+id/mtrl_picker_header_selection_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/mtrl_calendar_header_text_padding"
+        android:paddingLeft="@dimen/mtrl_calendar_header_text_padding"
+        android:textAlignment="viewStart"
+        android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+    <ImageButton
+        android:id="@+id/mtrl_picker_header_toggle"
+        android:layout_width="@dimen/mtrl_min_touch_target_size"
+        android:layout_height="@dimen/mtrl_min_touch_target_size"
+        android:layout_marginVertical="@dimen/mtrl_calendar_header_toggle_margin_bottom"
+        android:background="?attr/actionBarItemBackground" />
+</LinearLayout>

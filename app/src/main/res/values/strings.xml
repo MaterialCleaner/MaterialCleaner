@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home -->
+    <string name="app_name">Material Cleaner</string>
+    <string name="delimiter">,\ </string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="update">Update</string>
+    <string name="new_version">Material Cleaner %s is released</string>
+    <string name="manual_tools">Manual Tools</string>
+    <string name="application_data">Application Data</string>
+    <string name="cache">Cache Files</string>
+    <string name="temp">Temp Files</string>
+    <string name="log">Log Files</string>
+    <string name="nonpublic">Nonpublic Directories</string>
+    <string name="apk">Apks</string>
+    <string name="small">Small Files</string>
+    <string name="empty">Empty Directories</string>
+    <string name="loading">Loading…</string>
+    <string name="network_connection_failed">Network connection failed</string>
+    <string name="rationale_shouldShowRationale">%s requires write external storage permission.</string>
+    <string name="rationale_permanentlyDenied">%s requires write external storage permission.
+        Please grant it manually in app info.</string>
+    <string name="rationale_external_storage_manager">%s requires all files access permission.
+        Please grant it in the next page.</string>
+
+    <!-- Menu -->
+    <string name="action_start_or_stop">Start or stop Cleaner service</string>
+    <string name="settings">Settings</string>
+    <string name="help">Help</string>
+    <string name="contact">Contact</string>
+    <string name="contact_message_googleplay">You can contact us through the following ways; for order-related issues, please prioritize using email, and for application-related issues, please prioritize using GitHub or Telegram.</string>
+    <string name="contact_message_github">You can contact us through the following ways; for order-related issues, please prioritize using email, and for application-related issues, please prioritize using GitHub or QQ Channel.</string>
+    <string name="email">Email</string>
+    <string name="github" translatable="false">GitHub</string>
+    <string name="telegram" translatable="false">Telegram</string>
+    <string name="qq_channel">QQ Channel</string>
+    <string name="purchase">Purchase</string>
+    <string name="about">About</string>
+    <string name="view">View</string>
+    <string name="menu_sort_by_name_title">App name</string>
+    <string name="menu_sort_by_update_time_title">Update time</string>
+    <string name="menu_rule_count">Ruled apps first</string>
+    <string name="menu_mount_state">Mount state</string>
+    <string name="menu_hide_title">Hide</string>
+    <string name="menu_hide_system_app_title">System apps</string>
+    <string name="menu_hide_disabled_app_title">Disabled apps</string>
+    <string name="menu_hide_no_storage_permissions_title">No storage permissions apps</string>
+    <string name="menu_hide_pick_apps">Pick apps</string>
+    <string name="menu_batch_operation">Batch ops</string>
+    <string name="menu_select_all">Select all</string>
+    <string name="menu_invert_selection">Invert selection</string>
+    <string name="menu_unselect_all">Unselect all</string>
+    <string name="menu_hide_app_specific_storage">App-specific storage</string>
+    <string name="refresh">Refresh</string>
+    <string name="logcat">Grab logs</string>
+    <string name="menu_open">Open</string>
+    <string name="menu_copy">Copy</string>
+    <string name="menu_no_tick">No tick by default</string>
+    <string name="menu_no_scan">Never scan here again</string>
+    <string name="menu_add_to_hide_list">Add to hide list</string>
+    <string name="delete">Delete</string>
+    <string name="delete_all_mount_rules">Delete all mount rules</string>
+    <string name="delete_all_read_only">Delete all read only</string>
+    <string name="save">Save</string>
+    <string name="quit_without_save">Changes aren\'t saved yet, are you sure you want to quit?</string>
+    <string name="undo">Undo</string>
+
+    <!-- Settings -->
+    <string name="enable_features_header">ENABLE FEATURES</string>
+    <string name="start_on_boot_key" translatable="false">start_on_boot</string>
+    <string name="start_on_boot_title">Start Cleaner service on boot</string>
+    <string name="start_on_boot_summary">Make sure the service works fine on your device before ticking.</string>
+    <string name="post_notification_key" translatable="false">post_notification</string>
+    <string name="post_notification_title">Receive update notifications</string>
+    <string name="nonpublic_key" translatable="false">nonpublic</string>
+    <string name="nonpublic_title" translatable="false">@string/nonpublic</string>
+    <string name="nonpublic_summary">Mainly used to clean up files leaked from storage redirect.
+        It is not recommended to enable it if you are not using storage redirect.</string>
+    <string name="apk_key" translatable="false">apk</string>
+    <string name="small_key" translatable="false">small</string>
+    <string name="empty_key" translatable="false">empty</string>
+    <string name="empty_title" translatable="false">@string/empty</string>
+    <string name="scan_header">SCAN</string>
+    <string name="no_tick_key" translatable="false">no_tick</string>
+    <string name="no_tick_title">No tick</string>
+    <string name="no_tick_summary">Please enter a regular expression.
+        The matched path will not tick by default.</string>
+    <string name="no_scan_key" translatable="false">no_scan</string>
+    <string name="no_scan_title">No scan</string>
+    <string name="length_key" translatable="false">length</string>
+    <string name="length_title">Show file(directory) size</string>
+    <string name="length_summary">Turning off can speed up scanning, but file size is a good
+        reference for determining whether it can be safely deleted.
+        You need to weigh the pros and cons yourself.</string>
+    <string name="sort_key" translatable="false">sort</string>
+    <string name="sort_title">Sort by</string>
+    <string name="sort_summary_off">Scan sequence</string>
+    <string name="sort_summary_on">Size</string>
+    <string name="monitor_key" translatable="false">monitor</string>
+    <string name="monitor_title">Automatic rescan</string>
+    <string name="monitor_summary">Use inotify to monitor the shared storage, and perform incremental
+        scanning when the file changes. Invalid when watching more than 8192 files.</string>
+    <string name="maximize_key" translatable="false">maximize</string>
+    <string name="maximize_title">Maximal number of scan result</string>
+    <string name="maximize_summary">Prevent OutOfMemoryError</string>
+    <string name="confirm_delete_key" translatable="false">confirm_delete</string>
+    <string name="confirm_delete_title">Show a dialog to confirm deletion</string>
+    <string name="scan_system_app_key" translatable="false">scan_system_app</string>
+    <string name="scan_system_app_title">Scan system apps</string>
+    <string name="language_header">LANGUAGE</string>
+    <string name="language_key" translatable="false">language</string>
+    <string name="language_title">Language</string>
+    <string name="theme_header">THEME</string>
+    <string name="theme_color_key" translatable="false">theme_color</string>
+    <string name="theme_color_title">Theme Color</string>
+    <string name="theme_color_summary">The most common color in the app</string>
+    <string name="theme_m3_key" translatable="false">theme_m3</string>
+    <string name="theme_m3_title">Material 3</string>
+    <string name="dark_theme_key" translatable="false">dark_theme</string>
+    <string name="dark_theme_title">Dark theme</string>
+    <string name="dark_theme_off">Always off</string>
+    <string name="dark_theme_on">Always on</string>
+    <string name="follow_system">Follow system</string>
+    <string name="black_dark_theme_key" translatable="false">black_dark_theme</string>
+    <string name="black_dark_theme_title">Black dark theme</string>
+
+    <!-- Service More Options -->
+    <string name="require_zygisk_module">This feature requires the installation of the Zygisk module and the activation of Material Cleaner in LSPosed.</string>
+    <string name="cleanup_title">CLEANUP</string>
+    <string name="automatic_cleanup_key" translatable="false">automatic_cleanup</string>
+    <string name="automatic_cleanup_title">Automatic cleanup</string>
+    <string name="enable_relatime_title">(Experimental) Enable relative access time</string>
+    <string name="enable_relatime_summary">Enable the file system\'s relative access time feature,
+        which can help cleanup apps maximize the filtering of deletable files,
+        while also avoiding the deletion of frequently used files.
+        However, this will slightly reduce the file system\'s performance.</string>
+    <string name="open_wizard_by_default_key" translatable="false">open_wizard_by_default</string>
+    <string name="open_wizard_by_default_title">Open wizard by default</string>
+    <string name="share_key" translatable="false">share</string>
+    <string name="share_title">Share</string>
+    <string name="import_key" translatable="false">import</string>
+    <string name="import_title">Import</string>
+    <string name="edit_mount_rules_template_key" translatable="false">edit_mount_rules_template</string>
+    <string name="edit_mount_rules_template_title">Edit mount rules template</string>
+    <string name="apply_mount_rules_template_to_key">apply_mount_rules_template_to</string>
+    <string name="apply_mount_rules_template_to_title">Apply mount rules template to…</string>
+    <string name="edit_read_only_template_key" translatable="false">edit_read_only_template</string>
+    <string name="edit_read_only_template_title">Edit read only template</string>
+    <string name="apply_read_only_template_to_key">apply_read_only_template_to</string>
+    <string name="add_read_only_template">Add the read-only template to this app</string>
+    <string name="apply_read_only_template_to_title">Apply read only template to…</string>
+    <string name="apply_template_on_package_added_key" translatable="false">apply_template_on_package_added</string>
+    <string name="apply_template_on_package_added_title">Apply mount rules template to new package automatically</string>
+    <string name="applied_template_to_package">Applied template to %s</string>
+    <string name="aggressively_prompt_for_reading_media_files_title">Aggressively prompt for reading media files</string>
+    <string name="aggressively_prompt_for_reading_media_files_summary">Many unnecessary prompts will appear, but if you are unfamiliar with the storage redirect feature, enabling it can help reduce unintended problems.</string>
+    <string name="auto_logging_title">Automatically grab the boot/shutdown log and automatically rescue the soft bricks</string>
+    <string name="auto_logging_summary">Automatically disable the Zygisk module when storage volumes mount fails.</string>
+    <string name="apps_type_marks_key" translatable="false">apps_type_marks</string>
+    <string name="apps_type_marks_default" translatable="false">https://raw.githubusercontent.com/MaterialCleaner/AppsTypeMarks/main/</string>
+    <string name="apps_type_marks_title">Online Apps Type Marks</string>
+    <string name="apps_type_marks_summary">Provide the basis for \"Autocomplete wizard according to file system record\" and \"Apply mount rules template to new package automatically\".</string>
+    <string name="apps_type_marks_repo_header">Online repository</string>
+    <string name="apps_type_marks_repo_key" translatable="false">apps_type_marks_repo</string>
+    <string name="apps_type_marks_repo_title">Repository address</string>
+    <string name="apps_type_marks_repo_summary">Request URL is the address you set + application package name + .yml</string>
+    <string name="apps_type_marks_refresh_key" translatable="false">apps_type_marks_refresh</string>
+    <string name="apps_type_marks_refresh_title">Refresh cache</string>
+    <string name="upload_apps_type_marks_key" translatable="false">upload_apps_type_marks</string>
+    <string name="upload_apps_type_marks_title">Upload apps type marks to online repo</string>
+    <string name="upload_apps_type_marks_hint">%s is marked as %s app.\nMarked directories are:\n%s</string>
+    <string name="apps_type_marks_repo_correct_errors_key" translatable="false">correct_errors</string>
+    <string name="apps_type_marks_repo_correct_errors_title">Correct errors</string>
+    <string name="apps_type_marks_repo_correct_errors_summary">This action cannot be performed in the app. You need to fork the repository, then edit the markup files to fix issues, and finally pull requests. Click to open the repository.</string>
+    <string name="auto_complete_by_record_merge_key" translatable="false">auto_complete_by_record_merge</string>
+    <string name="auto_complete_by_record_merge_title">Complete by merging</string>
+    <string name="auto_complete_by_record_respect_key" translatable="false">auto_complete_by_record_respect</string>
+    <string name="auto_complete_by_record_respect_title">Respect online repository</string>
+    <string name="apply_online_rules_to_key" translatable="false">apply_online_rules_to</string>
+    <string name="apply_online_rules_to_title">Apply online rules to…</string>
+    <string name="apply_online_rules_to_summary">If you are sure that there are rules for a certain app in the online repository but not here, please click the refresh cache button above.</string>
+    <string name="record_shared_storage_title">Record file operations in shared storage</string>
+    <string name="record_external_app_specific_storage_title">(Experimental) Record file operations in external app-specific storage</string>
+    <string name="record_external_app_specific_storage_summary">Enabling apps to access their specific storage via FUSE, which will cause a significant performance regression.</string>
+    <string name="upsert_title">Save data using upsert</string>
+    <string name="upsert_summary">Only keep the latest one for duplicate data.</string>
+    <string name="storage_redirect_prompt">Storage Redirect Prompt</string>
+    <string name="add_mount_rule_to_fix_prompt">Would you like to add these mount rules to fix this?</string>
+    <string name="migrate_file">Migrate the file</string>
+    <string name="no_prompt_for_this_app">Don\'t prompt for this app again</string>
+    <string name="prompt_redirected_to_internal">Affected by storage redirect, %1$s saved media files to private path %2$s.</string>
+    <string name="prompt_redirect_to_internal_not_allowed">The storage redirect settings you are using for %1$s attempt to let it save media files to a private path %2$s, however, this is not permitted by the system.</string>
+    <string name="prompt_media_not_found">Affected by storage redirect, %1$s is not accessible to media file %2$s.</string>
+    <string name="prompt_media_not_found_aggressively">Media file %2$s may not be readable due to storage redirect affecting %1$s.
+        You are seeing this message because you have enabled Service Settings - More Options - Aggressively prompt for reading media files.</string>
+
+    <!-- Service -->
+    <string name="start_cleaner_service">Start Cleaner service</string>
+    <string name="confirm_exit">Stop Cleaner service?</string>
+    <string name="confirm_exit_restart">RESTART</string>
+    <string name="no_root_access">Can\'t access root</string>
+    <string name="time_out">Service may have encountered an exception when initializing. Sending this log to the developer may be helpful.</string>
+    <string name="service_running">SERVICE RUNNING</string>
+    <string name="service_need_upgrade">SERVICE NEED UPGRADE</string>
+    <string name="service_zygisk_need_upgrade">ZYGISK MODULE NEED UPGRADE</string>
+    <string name="service_exception">SERVICE ENVIRONMENT ABNORMAL</string>
+    <string name="service_exception_logcat_shutdown">The logcat is shutdown, please restart the Cleaner service.</string>
+    <string name="service_exception_no_am_log">No Activity Manager log, storage redirect can not work properly. (Ignore if you just started the service)</string>
+    <string name="service_exception_binder_dead">System services are dead. (Ignore if Zygisk module is not installed)</string>
+    <string name="unaddressed_logs">Unaddressed logs exist at /data/adb/modules/zygisk_cleanerhooks/logs.zip</string>
+    <string name="storage_volumes_mount_exception">Storage volumes mount exception. (Ignore if the system is just booting)</string>
+    <string name="server_version">Server version: %d%s</string>
+    <string name="zygisk_module_version">\nZygisk module version: %d</string>
+    <string name="service_settings">Service Settings</string>
+    <string name="file_picker_title">Pick file</string>
+    <string name="file_picker_unselected">Selected file</string>
+    <string name="file_picker_hint">Path</string>
+    <string name="file_picker_error_starts_with">Not a dir in %s</string>
+    <string name="file_picker_error_format">Format error</string>
+    <string name="enabled">%s enabled</string>
+    <plurals name="enabled_rule_count">
+        <item quantity="one">%d rule</item>
+        <item quantity="other">%d rules</item>
+    </plurals>
+    <string name="enabled_mount_rules_count">%d mount rules</string>
+    <string name="enabled_read_only_count">%d read only</string>
+    <string name="storage_redirect_title">STORAGE REDIRECT</string>
+    <string name="storage_redirect_unsupported">The free version currently does not support Android %s</string>
+    <string name="storage_redirect_list_mounted">Mounted</string>
+    <string name="storage_redirect_list_unknown">Unknown state</string>
+    <string name="storage_redirect_list_mount_exception">Mount exception</string>
+    <string name="certification_revalidating">Certification revalidating</string>
+    <string name="free_version">Free version</string>
+    <string name="require_enable_in_lsp">Please activate Material Cleaner in LSPosed and restart the system.</string>
+    <plurals name="uninstalled_package">
+        <item quantity="one">%s is uninstalled. Would you like to remove its settings now?</item>
+        <item quantity="other">%s are uninstalled. Would you like to remove their settings now?</item>
+    </plurals>
+    <string name="storage_redirect_not_saved">Not saved</string>
+    <string name="storage_redirect_status_header">STATUS</string>
+    <string name="storage_redirect_status_summary_prefix">The app is running. Its pid: %s.\ </string>
+    <string name="storage_redirect_status_summary_suffix_mounted">Mounted for all processes \uD83D\uDE0B\ </string>
+    <plurals name="storage_redirect_status_summary_suffix_not_mounted">
+        <item quantity="one">Affected by %s, the mount status in %s is abnormal \uD83E\uDD14\ </item>
+        <item quantity="other">Affected by %s, the mount status in %s are abnormal \uD83E\uDD14\ </item>
+    </plurals>
+    <string name="storage_redirect_status_not_mounted_startup_unaware">start-up of the processes unaware</string>
+    <string name="storage_redirect_status_not_mounted_dir_deleted">mounted filesystem (source) is deleted</string>
+    <string name="storage_redirect_status_not_mounted_mkdir_failed">failed to make mount directories</string>
+    <string name="storage_redirect_status_not_mounted_unknown">failed to check mount state</string>
+    <string name="storage_redirect_status_not_mounted_mount_failed">mount failed</string>
+    <string name="storage_redirect_status_not_mounted_remount">remounting</string>
+    <string name="storage_redirect_status_summary_troubleshoot_mount_exception">You can refer to the instructions on the GitHub wiki to troubleshoot these mount exceptions.</string>
+    <string name="storage_redirect_confirm_media">You should NOT use storage redirect for this app. If you must try it, make sure you are well prepared to survive the "soft brick". For media storage management, you can consider using the Xposed module developed by us, which is open-source and free.</string>
+    <string name="storage_redirect_warn_system">This is a system app. Wrong mount rules can lead to disaster.</string>
+    <string name="storage_redirect_warn_no_storage_permissions">The app doesn\'t declare all files access permission. It can only write to standard dirs.</string>
+    <string name="storage_redirect_warn_denylist">The app is in Magisk\'s DenyList. Storage redirect will not take effect for a short time after the app is launched.</string>
+    <string name="storage_redirect_warn_shared_userid">The app shares uid %1$s with %2$s. It is recommended to allow the app to directly access the app-specific storage of the apps mentioned above, so as not to break the related functions of the app.</string>
+    <string name="storage_redirect_warn_shared_proc">The app shares process %1$s with %2$s. Their mount rules will be synchronized.</string>
+    <string name="storage_redirect_mount_header">MOUNT RULES</string>
+    <string name="storage_redirect_mount_summary">mount() attaches the filesystem specified
+        by source to the location specified by the pathname in target.</string>
+    <string name="storage_redirect_source_title">SOURCE</string>
+    <string name="storage_redirect_target_title">TARGET</string>
+    <string name="storage_redirect_read_only_header">READ ONLY</string>
+    <string name="storage_redirect_read_only_summary">For the specified paths, the app cannot create directories or files at this location or its lower level, but can open files.</string>
+    <string name="storage_redirect_apps_type_marks_err">Illegal type, please check your mark file.</string>
+    <string name="storage_redirect_apps_type_marks_hint">This app is marked as %s app.\n%s\n%s\n\By default, \"Autocomplete wizard according to file system record\" feature will take the above into account.</string>
+    <string name="storage_redirect_apps_type_marks_default_repo_hint">\nPlease be informed that the default online repository may not always be correct. If necessary, you can correct errors or build your own repository.</string>
+    <string name="storage_redirect_common_type">common</string>
+    <string name="storage_redirect_common_rationale">You can complete all edits by accepting recommended mount rules given when prompting apps to read and save media files.</string>
+    <string name="storage_redirect_download_type">download</string>
+    <string name="storage_redirect_download_rationale">You can try to fill in the download path you specified for the source in \"Change the file hierarchy seen by the app\", and fill in the following paths for the target:</string>
+    <string name="storage_redirect_all_files_access_type">all files access</string>
+    <string name="storage_redirect_all_files_access_rationale">I am afraid you should not check the \"The app does not need to access all files in external storage\" option. You can try to fill in the following paths in \"Paths that can\'t access\":</string>
+    <string name="storage_redirect_dir_operation_recommendation">Would you like to run these recommended file operations?</string>
+    <string name="storage_redirect_move_dir">move %s → %s</string>
+    <string name="storage_redirect_copy_dir">copy %s → %s</string>
+    <string name="storage_redirect_read_only_paths_inaccessible">Mount rule does not allow access to following paths set as read-only: \n%s\nThe app will not be able to access these paths. Are you sure you want to save?</string>
+    <string name="storage_redirect_remount_instantly">The app is running. Would you like to remount to try to fix mount exceptions?</string>
+    <string name="storage_redirect_forcestop_instantly">The app is running. Would you like to force stop to try to fix mount exceptions?</string>
+    <string name="storage_redirect_no_mount_rules">No mount rules yet.</string>
+    <string name="storage_redirect_follow_wizard">Follow the wizard to create mount rules</string>
+    <string name="storage_redirect_manual">Manually create mount rules</string>
+    <string name="storage_redirect_question_header">What kind of rules do you want to create?</string>
+    <string name="storage_redirect_question_1">The app does not need to access all files in external storage</string>
+    <string name="storage_redirect_question_1_1">The app saves valuable data in shared storage</string>
+    <string name="storage_redirect_question_1_2">The app uses obb dir</string>
+    <string name="storage_redirect_question_2">Dirs that can directly access</string>
+    <string name="storage_redirect_question_3">Change the file hierarchy seen by the app</string>
+    <string name="storage_redirect_question_3_1">Source, target</string>
+    <string name="storage_redirect_question_4">Paths that can\'t access</string>
+    <string name="auto_complete_by_record">Autocomplete wizard according to file system record</string>
+    <string name="auto_complete_by_record_rationale_title">Autocomplete wizard based on %d records</string>
+    <string name="auto_complete_by_record_rationale_content_header">Autocomplete \"%s\" based on the following records</string>
+    <string name="submit">Submit</string>
+    <string name="storage_redirect_test">Test mount rules</string>
+    <string name="storage_redirect_test_result_mounted_path">When the app accesses this path, the actual path accessed is %s.</string>
+    <string name="storage_redirect_test_result_accessible_places">The app can access this path by accessing %s.</string>
+    <string name="storage_redirect_test_result_inaccessible">This path is not accessible for the app.</string>
+    <string name="storage_redirect_storage_permissions_header">STORAGE PERMISSIONS</string>
+    <string name="storage_redirect_storage_permissions_read">Read external storage</string>
+    <string name="storage_redirect_storage_permissions_write">Write external storage</string>
+    <string name="storage_redirect_storage_permissions_manage">Manage external storage</string>
+    <string name="storage_redirect_storage_permissions_granted">Granted</string>
+    <string name="storage_redirect_storage_permissions_denied">Denied</string>
+    <string name="storage_redirect_storage_permissions_ignored">Ignored</string>
+    <string name="filesystem_record_title">FILE SYSTEM RECORD</string>
+    <string name="filesystem_record_activation_instruction">Activation Instruction\nThis feature can record the file operations of apps, which will help reduce the difficulty of using this app. However, it has some \"side effects\" due to its implementation, which can be viewed on the GitHub wiki.\nIf an app suffers a significant \"side effect\" after enabling this feature, please <b>add it to hide list</b> so it can be restored.</string>
+    <string name="filesystem_record_enable">Enable file system record</string>
+    <string name="filesystem_record_database_too_large">The database file is too large. Loading it may cause the app to malfunction.</string>
+    <string name="filesystem_record_database_load_anyway">Load anyway</string>
+    <string name="filesystem_record_prune_records">Prune records</string>
+    <string name="filesystem_record_database_size">%d records, database size %s.</string>
+    <string name="filesystem_record_clear">Delete all records</string>
+    <string name="filesystem_record_app_specific_storage">Delete app-specific storage records</string>
+    <string name="filesystem_record_uninstalled_apps">Delete records of uninstalled apps</string>
+    <string name="filesystem_record_distinct">Delete duplicate old records</string>
+    <string name="filesystem_record_queried">Delete the currently queried records</string>
+    <string name="filesystem_record_load_all">Load all remaining records</string>
+    <string name="filesystem_record_flags_create">create %s %s</string>
+    <string name="filesystem_record_flags_open">open %s %s</string>
+    <string name="filesystem_record_flags_delete">delete %s %s</string>
+    <string name="filesystem_record_flags_move_from">move %s from %s</string>
+    <string name="filesystem_record_flags_move_to">move %s to %s</string>
+    <string name="filesystem_record_flags_file">file</string>
+    <string name="filesystem_record_flags_dir">directory</string>
+
+    <!-- Worker -->
+    <string name="deleting">Deleting %s</string>
+    <string name="failed_to_delete">Failed to delete %s</string>
+    <string name="failed_to_move_copy">Failed to %s</string>
+    <string name="creating_snapshot">Creating snapshot of %s</string>
+    <string name="failed_to_create_snapshot">Failed to create snapshot of %s</string>
+
+    <!-- Manual Tools -->
+    <string name="explore">Explore</string>
+    <string name="free_space_of_total_storage_label">%1$s of %2$s free</string>
+    <string name="browser">Browser</string>
+    <string name="snapshot">Snapshot</string>
+    <string name="create_backup">Create backup</string>
+    <string name="manage_backup_and_recycle_bin">Manage backup and recycle bin</string>
+    <string name="machine_learning">Machine learning</string>
+
+    <!-- Browser -->
+    <string name="rationale_browsing_files">Browsing files</string>
+    <string name="bookmarks_key" translatable="false">bookmarks_key</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="add_to_bookmarks">Add to bookmarks</string>
+    <string name="browser_go_to">Go to…</string>
+    <string name="browser_sort_by_key" translatable="false">browser_sort_by</string>
+    <string name="browser_sort_by_name">Name</string>
+    <string name="browser_sort_by_size">Size</string>
+    <string name="browser_sort_by_time">Time</string>
+    <string name="browser_sort_by_dirs_first_key" translatable="false">browser_sort_by_dirs_first</string>
+    <string name="browser_sort_by_dirs_first">Directories first</string>
+    <string name="start_creating_snapshot">Start creating snapshot</string>
+    <plurals name="file_count">
+        <item quantity="one">%d file</item>
+        <item quantity="other">%d files</item>
+    </plurals>
+    <plurals name="dir_count">
+        <item quantity="one">%d dir</item>
+        <item quantity="other">%d dirs</item>
+    </plurals>
+    <string name="file_dir_count_time">%s, %s, %s</string>
+
+    <!-- Trash -->
+    <string name="rationale_scanning_files">Scanning files</string>
+    <string name="not_found">%s not found</string>
+    <string name="maximum_reached">The scan ended prematurely because the number of results reached the maximum number you set.</string>
+    <string name="trash_toolbar_title">%d %s</string>
+    <string name="trash_toolbar_title_cleaning">Cleaning…</string>
+    <string name="trash_toolbar_subtitle_prefix">%d selected</string>
+    <string name="trash_toolbar_subtitle_suffix">, totaling %s</string>
+    <string name="in_use">In use</string>
+    <string name="copied">Copied: %s</string>
+    <string name="standard_dir">Standard directories created</string>
+    <string name="recommend_rescan">Files in the shared storage have changed.
+        The results currently displayed may not match the actual case.</string>
+    <string name="rescan">Rescan</string>
+    <string name="confirm_delete">Delete these files?</string>
+
+    <!-- Purchase -->
+    <string name="purchase_unavailable_button">Unavailable</string>
+    <string name="purchase_subscribe_card_title">Subscribe to all features</string>
+    <string name="purchase_subscribe_card_summary">Material Cleaner is a freemium app. Paying for it allows us to maintain it better. Thank you for your sponsor.</string>
+    <string name="purchase_subscribe_card_button">Subscribe</string>
+    <string name="subscribing">Subscribing</string>
+    <string name="purchased">Purchased</string>
+    <string name="purchase_cleanup_card_title">Cleanup</string>
+    <string name="purchase_cleanup_card_summary">Unfinished, please do not purchase for reasons other than supporting development</string>
+    <string name="purchase_service_card_title">Cleaner service</string>
+    <string name="purchase_service_card_summary">View features of premium version</string>
+    <string name="purchase_service_details_header_freewheeling">FREEWHEELING</string>
+    <string name="purchase_service_details_summary_read_only">Support read only feature.</string>
+    <string name="purchase_service_details_header_handy">HANDY</string>
+    <string name="purchase_service_details_summary_retrodict_answers">Support retrodict wizard answers based on mount rules.</string>
+    <string name="purchase_service_details_summary_open_wizard_by_default">Support open wizard by default.</string>
+    <string name="purchase_service_details_summary_remount">Support remounting.</string>
+    <string name="purchase_service_details_summary_dir_operation_recommendation">Provide file migration suggestions figured out by difference algorithm when mount rules change.</string>
+    <string name="purchase_service_details_summary_prompt_mount_rules">Provide recommended mount rules when prompting apps to read and save media files.</string>
+    <string name="purchase_service_details_header_pithy">PITHY</string>
+    <string name="purchase_service_details_summary_upsert">Support record file operations using upsert.</string>
+    <string name="purchase_service_details_summary_prune_records">Support multiple schemes for pruning records.</string>
+
+    <!-- Billing -->
+    <string name="install_from_play">Please note that you can only make transactions if you install this app from the Play Store.</string>
+    <string name="billing_connecting">Connecting to the server</string>
+    <string name="billing_connect_failed">Fail to connect to the server\n%s</string>
+    <string name="retry">Retry</string>
+    <string name="acknowledging">Acknowledging, please do not leave this page</string>
+    <string name="purchase_success">Billing successful. Some features will take effect after restarting the app.</string>
+    <string name="purchase_failure_billing">Billing failed. Please click Purchase to try again (no need to pay again). If it always fails, you will get the refund automatically after 48 hours.</string>
+
+    <!-- About -->
+    <string name="slogan">Material Design cleanup application</string>
+    <string name="version">Version</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="developer">Developer</string>
+    <string name="licenses">Open Source Licenses</string>
+</resources>

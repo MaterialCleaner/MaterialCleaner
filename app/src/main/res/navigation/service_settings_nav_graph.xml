@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/service_settings_fragment">
+
+    <fragment
+        android:id="@+id/service_settings_fragment"
+        android:name="me.gm.cleaner.client.ui.ServiceSettingsFragment"
+        android:label="@string/service_settings">
+        <action
+            android:id="@+id/service_settings_to_storage_redirect_action"
+            app:destination="@id/storage_redirect_fragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_up_background"
+            app:popEnterAnim="@anim/slide_down_background"
+            app:popExitAnim="@anim/slide_down" />
+        <action
+            android:id="@+id/service_settings_to_apps_type_marks_settings_action"
+            app:destination="@id/apps_type_marks_settings_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storage_redirect_fragment"
+        android:name="me.gm.cleaner.client.ui.storageredirect.StorageRedirectFragment"
+        android:label="@string/storage_redirect_title">
+        <argument
+            android:name="pi"
+            app:argType="android.content.pm.PackageInfo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/apps_type_marks_settings_fragment"
+        android:name="me.gm.cleaner.client.ui.AppsTypeMarksSettingsFragmentStub"
+        android:label="@string/apps_type_marks_title" />
+</navigation>

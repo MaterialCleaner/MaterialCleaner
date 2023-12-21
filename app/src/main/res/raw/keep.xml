@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/unsupported_genuine_0,@string/unsupported_genuine_1,@string/unsupported_genuine_2,@string/unsupported_genuine_3,@string/unsupported_genuine_4,@string/unsupported_genuine_5,@string/unsupported_genuine_6,@string/unsupported_genuine_7,@string/unsupported_genuine_8,@string/unsupported_genuine_9" />
+<!-- https://developer.android.com/studio/build/shrink-code#keep-resources -->

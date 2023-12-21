@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/abc_dialog_title_divider_material">
+
+    <EditText
+        android:id="@+id/filterEdit"
+        android:layout_width="match_parent"
+        android:layout_height="?listPreferredItemHeightSmall"
+        android:background="@null"
+        android:drawableStart="@drawable/ic_outline_filter_list_24"
+        android:drawablePadding="24dp"
+        android:hint="@android:string/search_go"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:paddingStart="?dialogPreferredPadding"
+        android:paddingEnd="?dialogPreferredPadding"
+        android:textAppearance="?textAppearanceListItem" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:minHeight="?listPreferredItemHeight">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+
+        <include
+            android:id="@+id/list_container"
+            layout="@layout/list_dialog" />
+    </FrameLayout>
+</LinearLayout>

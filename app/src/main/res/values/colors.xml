@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary_light">@color/material_green_400</color>
+    <color name="color_primary_dark">@color/material_green_200</color>
+    <color name="color_primary">@color/color_primary_light</color>
+
+    <color name="color_warning">@color/material_yellow_800</color>
+
+    <color name="color_background">@color/design_default_color_background</color>
+    <color name="cardview_background">@color/cardview_light_background</color>
+    <color name="color_on_secondary">@color/design_default_color_on_primary</color>
+</resources>

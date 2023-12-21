@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/mount_rule"
+        layout="@layout/storage_redirect_category_mount_rule_item" />
+
+    <CheckBox
+        android:id="@+id/migrate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/screen_edge"
+        android:checked="true"
+        android:text="@string/migrate_file"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceBody2" />
+
+    <CheckBox
+        android:id="@+id/hidelist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/screen_edge"
+        android:text="@string/no_prompt_for_this_app"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceBody2" />
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="half_card_margin">4dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="preference_header_bottom">8dp</dimen>
+    <dimen name="screen_edge">16dp</dimen>
+    <dimen name="preference_header_top">24dp</dimen>
+    <dimen name="icon_center_from_screen_edge">28dp</dimen>
+    <dimen name="content_start_from_screen_edge">72dp</dimen>
+    <dimen name="content_start_from_screen_edge_minus_screen_edge">56dp</dimen>
+    <dimen name="icon_size">40dp</dimen>
+    <dimen name="badge_size">24dp</dimen>
+    <dimen name="color_picker_margin">6dp</dimen>
+    <dimen name="actionbar_size_add_tab_height">104dp</dimen>
+    <dimen name="actionbar_size_add_tab_height_m3">112dp</dimen>
+</resources>

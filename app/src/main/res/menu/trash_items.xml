@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_open"
+        android:title="@string/menu_open" />
+    <item
+        android:id="@+id/menu_copy"
+        android:title="@string/menu_copy" />
+    <item
+        android:id="@+id/menu_no_tick"
+        android:title="@string/menu_no_tick" />
+    <item
+        android:id="@+id/menu_no_scan"
+        android:title="@string/menu_no_scan" />
+
+</menu>

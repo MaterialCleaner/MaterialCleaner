@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk rootProject.ext.compileSdk
+    defaultConfig {
+        minSdk rootProject.ext.minSdk
+        targetSdk rootProject.ext.targetSdk
+        consumerProguardFiles "consumer-rules.pro"
+        buildConfigField 'int', 'VERSION_CODE', "${rootProject.ext.versionCode}"
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+    namespace 'me.gm.cleaner.shared'
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+task generateFbsKotlin(type: Exec) {
+    def inputDir = file("$rootDir/fbs")
+    def outputKotlinDir = file("$rootDir/shared/src/main/java")
+    def fbsFiles = layout.files { file(inputDir).listFiles() }.filter { File f -> f.name.endsWith(".fbs") }.toList()
+    ignoreExitValue(true)
+
+    standardOutput = new ByteArrayOutputStream()
+    errorOutput = new ByteArrayOutputStream()
+
+    setErrorOutput(errorOutput)
+    setStandardOutput(standardOutput)
+
+    def commandLineArgs = ["$inputDir/flatc", '-o', outputKotlinDir, '--kotlin']
+    fbsFiles.forEach {
+        commandLineArgs.add(it.path)
+    }
+    commandLine commandLineArgs
+
+    doFirst {
+        mkdir "$outputKotlinDir/"
+    }
+    doLast {
+        if (executionResult.get().exitValue != 0) {
+            throw new GradleException("flatc failed with: ${executionResult.get().toString()}")
+        }
+    }
+}
+
+dependencies {
+    implementation project(':aidl')
+
+    implementation "androidx.annotation:annotation:$rootProject.annotationVersion"
+    implementation "androidx.core:core-ktx:$rootProject.coreVersion"
+    implementation "androidx.lifecycle:lifecycle-common:$rootProject.lifecycleVersion"
+    implementation "androidx.preference:preference-ktx:$rootProject.preferenceVersion"
+    implementation "androidx.security:security-crypto-ktx:$rootProject.securityCryptoVersion"
+    implementation "androidx.security:security-app-authenticator:$rootProject.securityAppAuthenticatorVersion"
+    implementation "androidx.security:security-identity-credential:$rootProject.securityIdentityCredentialVersion"
+    implementation "com.google.flatbuffers:flatbuffers-java:$rootProject.flatbuffersVersion"
+}

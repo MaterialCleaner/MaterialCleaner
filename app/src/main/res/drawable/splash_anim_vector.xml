@@ -1,0 +1,117 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:width="432dp"
+            android:height="432dp"
+            android:viewportWidth="432"
+            android:viewportHeight="432">
+            <group android:name="_R_G">
+                <group
+                    android:scaleX="12"
+                    android:scaleY="12"
+                    android:translateX="72"
+                    android:translateY="72">
+                    <path
+                        android:name="ic_launcher_background"
+                        android:fillColor="#CDE8B1"
+                        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z" />
+                </group>
+                <group
+                    android:name="ic_launcher_foreground"
+                    android:scaleX="9"
+                    android:scaleY="9"
+                    android:translateX="108"
+                    android:translateY="108">
+                    <group android:name="top">
+                        <path
+                            android:name="top_path"
+                            android:fillColor="#7AC943"
+                            android:pathData="M7,7v2h14L21,7L7,7z" />
+                    </group>
+                    <group android:name="center">
+                        <path
+                            android:name="center_path"
+                            android:fillColor="#7AC943"
+                            android:pathData="M5,13h14v-2L5,11v2z" />
+                    </group>
+                    <group android:name="bottom">
+                        <path
+                            android:name="bottom_path"
+                            android:fillColor="#7AC943"
+                            android:pathData="M3,17h14v-2L3,15v2z" />
+                    </group>
+                </group>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="top">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="320"
+                android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+                android:propertyName="translateX"
+                android:startOffset="0"
+                android:valueFrom="-10"
+                android:valueTo="0" />
+        </aapt:attr>
+    </target>
+    <target android:name="top_path">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="320"
+                android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+                android:propertyName="fillAlpha"
+                android:startOffset="0"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:valueType="floatType" />
+        </aapt:attr>
+    </target>
+    <target android:name="center">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="320"
+                android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+                android:propertyName="translateX"
+                android:startOffset="90"
+                android:valueFrom="-10"
+                android:valueTo="0" />
+        </aapt:attr>
+    </target>
+    <target android:name="center_path">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="320"
+                android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+                android:propertyName="fillAlpha"
+                android:startOffset="90"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:valueType="floatType" />
+        </aapt:attr>
+    </target>
+    <target android:name="bottom">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="320"
+                android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+                android:propertyName="translateX"
+                android:startOffset="180"
+                android:valueFrom="-10"
+                android:valueTo="0" />
+        </aapt:attr>
+    </target>
+    <target android:name="bottom_path">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="320"
+                android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+                android:propertyName="fillAlpha"
+                android:startOffset="180"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:valueType="floatType" />
+        </aapt:attr>
+    </target>
+</animated-vector>

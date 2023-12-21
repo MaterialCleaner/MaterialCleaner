@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/card_margin">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/card_margin"
+        android:padding="@dimen/card_margin"
+        android:text="@string/storage_redirect_no_mount_rules"
+        android:textAlignment="viewStart"
+        android:textAppearance="?textAppearanceBody1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/follow_wizard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/card_margin"
+        android:text="@string/storage_redirect_follow_wizard"
+        android:textAppearance="?textAppearanceBody1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/manual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/card_margin"
+        android:text="@string/storage_redirect_manual"
+        android:textAppearance="?textAppearanceBody1" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/card_margin"
+        android:text="@string/storage_redirect_test"
+        android:textAppearance="?textAppearanceBody1" />
+
+    <include
+        android:id="@+id/result"
+        layout="@layout/storage_redirect_category_test" />
+</LinearLayout>

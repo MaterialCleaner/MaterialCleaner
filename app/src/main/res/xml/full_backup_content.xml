@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include
+        domain="file"
+        path="deny_list" />
+    <include
+        domain="file"
+        path="read_only" />
+    <include
+        domain="file"
+        path="storage_redirect" />
+    <include
+        domain="sharedpref"
+        path="me.gm.cleaner_preferences.xml" />
+</full-backup-content>

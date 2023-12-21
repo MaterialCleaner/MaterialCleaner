@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Base.AppTheme.Material3" />
+
+    <style name="AppTheme.FullScreenDialog" parent="AppTheme">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="AppTheme.Slide">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+    <!-- Avoid blink -->
+    <style name="TransparentTheme" parent="android:Theme.Translucent.NoTitleBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="TransparentBackground" parent="Base.AppTheme">
+        <item name="android:colorBackground">?colorBackgroundFloating</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="TransparentBackground.Material3" parent="Base.AppTheme.Material3">
+        <item name="android:colorBackground">?colorBackgroundFloating</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="PreferenceHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/screen_edge</item>
+        <item name="android:paddingTop">@dimen/preference_header_top</item>
+        <item name="android:paddingEnd">@dimen/screen_edge</item>
+        <item name="android:paddingBottom">@dimen/preference_header_bottom</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Body2</item>
+        <item name="android:textColor">?colorPrimary</item>
+    </style>
+
+    <style name="PreferenceSummary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/screen_edge</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+    </style>
+</resources>

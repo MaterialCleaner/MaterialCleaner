@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.AppTheme" parent="Base.V31.AppTheme" />
+
+    <style name="Base.AppTheme.Material3" parent="Base.V31.AppTheme.Material3" />
+
+    <!-- https://developer.android.com/develop/ui/views/launch/splash-screen -->
+    <style name="Base.V31.AppTheme" parent="Base.V27.AppTheme">
+        <item name="android:windowSplashScreenBackground">?android:attr/colorBackground</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_anim_vector</item>
+        <item name="android:windowSplashScreenAnimationDuration">500</item>
+    </style>
+
+    <style name="Base.V31.AppTheme.Material3" parent="Base.V27.AppTheme.Material3">
+        <item name="android:windowSplashScreenBackground">?android:attr/colorBackground</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_anim_vector</item>
+        <item name="android:windowSplashScreenAnimationDuration">500</item>
+    </style>
+</resources>

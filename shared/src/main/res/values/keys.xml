@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Menu -->
+    <string name="sort_by_key" translatable="false">sort_by</string>
+    <string name="menu_rule_count_key" translatable="false">rule_count</string>
+    <string name="menu_mount_state_key" translatable="false">mount_state</string>
+    <string name="menu_hide_system_app_key" translatable="false">hide_system_app</string>
+    <string name="menu_hide_disabled_app_key" translatable="false">hide_disabled_app</string>
+    <string name="menu_hide_no_storage_permissions_key" translatable="false">hide_no_storage_permissions</string>
+    <string name="menu_hide_app_specific_storage_key" translatable="false">hide_app_specific_storage</string>
+
+    <!-- Service -->
+    <string name="enable_relatime_key" translatable="false">enable_relatime</string>
+    <string name="aggressively_prompt_for_reading_media_files_key">aggressively_prompt_for_reading_media_files</string>
+    <string name="auto_logging_key">auto_logging</string>
+    <string name="record_shared_storage_key" translatable="false">record_shared_storage</string>
+    <string name="record_external_app_specific_storage_key" translatable="false">record_external_app_specific_storage</string>
+    <string name="upsert_key" translatable="false">upsert</string>
+</resources>

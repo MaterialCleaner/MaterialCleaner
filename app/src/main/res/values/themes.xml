@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.AppTheme" parent="Base.V24.AppTheme" />
+
+    <style name="Base.AppTheme.Material3" parent="Base.V24.AppTheme.Material3" />
+
+    <style name="Base.V24.AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="android:windowLightStatusBar">?isLightTheme</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">?colorPrimary</item>
+        <item name="colorSecondary">?colorPrimary</item>
+        <item name="colorSecondaryVariant">?colorSecondary</item>
+        <item name="colorOnPrimaryContainer">?android:textColorPrimary</item>
+        <item name="colorOnSecondary">@color/color_on_secondary</item>
+        <item name="colorOnSurfaceVariant">?attr/colorControlNormal</item>
+        <item name="android:colorBackground">@color/color_background</item>
+
+        <item name="checkboxStyle">@style/CheckBox</item>
+        <item name="radioButtonStyle">@style/RadioButton</item>
+        <item name="switchStyle">@style/Switch</item>
+        <item name="appBarLayoutStyle">@style/AppBarLayout</item>
+        <item name="preferenceTheme">@style/PreferenceTheme</item>
+        <item name="floatingActionButtonStyle">@style/FloatingActionButton</item>
+        <item name="swipeRefreshLayoutProgressSpinnerBackgroundColor">@color/cardview_background
+        </item>
+
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Widget.AppCompat.Toolbar.Title
+        </item>
+        <item name="switchWidgetLayoutStyle">@layout/preference_widget_switch_compat</item>
+        <item name="actionBarSizeAddTabHeight">@dimen/actionbar_size_add_tab_height</item>
+        <item name="preferenceHeader">@style/PreferenceHeader</item>
+        <item name="preferenceSummary">@style/PreferenceSummary</item>
+    </style>
+
+    <style name="Base.V24.AppTheme.Material3" parent="Theme.Material3.DayNight">
+        <item name="android:windowLightStatusBar">?isLightTheme</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="checkboxStyle">@style/CheckBox</item>
+        <item name="radioButtonStyle">@style/RadioButton</item>
+        <item name="switchStyle">@style/Switch</item>
+        <item name="toolbarStyle">@style/Toolbar.Material3</item>
+        <item name="preferenceTheme">@style/PreferenceTheme.Material3</item>
+
+        <item name="switchWidgetLayoutStyle">@layout/preference_widget_material_switch</item>
+        <item name="actionBarSizeAddTabHeight">@dimen/actionbar_size_add_tab_height_m3</item>
+        <item name="preferenceHeader">@style/PreferenceHeader</item>
+        <item name="preferenceSummary">@style/PreferenceSummary</item>
+    </style>
+
+    <style name="CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="enforceMaterialTheme">true</item>
+        <item name="useMaterialThemeColors">true</item>
+        <item name="buttonTint">@color/m3_checkbox_button_tint</item>
+        <item name="buttonIconTint">@color/m3_checkbox_button_icon_tint</item>
+        <item name="buttonIcon">@null</item>
+    </style>
+
+    <style name="RadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="enforceMaterialTheme">true</item>
+        <item name="useMaterialThemeColors">true</item>
+        <item name="buttonTint">@color/m3_radiobutton_button_tint</item>
+    </style>
+
+    <style name="Switch" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="enforceMaterialTheme">true</item>
+        <item name="useMaterialThemeColors">true</item>
+    </style>
+
+    <style name="PreferenceTheme" parent="PreferenceThemeOverlay">
+        <item name="preferenceCategoryTitleTextColor">?colorPrimary</item>
+        <item name="switchPreferenceCompatStyle">@style/Preference.SwitchPreferenceCompat</item>
+        <item name="simpleMenuPreferenceStyle">@style/Preference.SimpleMenuPreference</item>
+        <!-- Remove scrollbars. -->
+        <item name="android:scrollbars">none</item>
+    </style>
+
+    <style name="PreferenceTheme.Material3" parent="PreferenceTheme">
+        <item name="simpleMenuPreferenceStyle">@style/Preference.SimpleMenuPreference.Material3
+        </item>
+    </style>
+
+    <style name="Preference.SwitchPreferenceCompat" parent="Preference.SwitchPreferenceCompat.Material">
+        <item name="android:widgetLayout">?switchWidgetLayoutStyle</item>
+    </style>
+
+    <style name="Preference.SimpleMenuPreference.Material3" parent="Preference.SimpleMenuPreference">
+        <item name="android:popupMenuStyle">
+            @style/Widget.Preference.SimpleMenuPreference.PopupMenu.Material3
+        </item>
+    </style>
+
+    <style name="Widget.Preference.SimpleMenuPreference.PopupMenu.Material3" parent="Widget.Preference.SimpleMenuPreference.PopupMenu">
+        <item name="android:popupBackground">@drawable/m3_popupmenu_background</item>
+    </style>
+
+    <style name="FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="tint">?android:textColorPrimaryInverse</item>
+    </style>
+
+    <style name="AppBarLayout" parent="Widget.MaterialComponents.AppBarLayout.Surface">
+        <item name="android:background">?android:colorBackground</item>
+        <item name="liftOnScroll">true</item>
+        <item name="android:stateListAnimator">@animator/design_appbar</item>
+    </style>
+
+    <style name="Toolbar.Material3" parent="Widget.Material3.Toolbar">
+        <item name="contentInsetStartWithNavigation">@dimen/abc_action_bar_content_inset_with_nav
+        </item>
+    </style>
+
+    <style name="ThemeOverlay.Material.Dialog.ColorPicker" parent="@style/ThemeOverlay.MaterialComponents.Dialog.Alert" />
+</resources>

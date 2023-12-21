@@ -1,0 +1,200 @@
+import java.nio.file.Paths
+
+plugins {
+    id 'com.android.application'
+    id 'androidx.navigation.safeargs'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk rootProject.ext.compileSdk
+    buildToolsVersion = rootProject.ext.buildToolsVersion
+    ndkVersion rootProject.ext.ndkVersion
+    defaultConfig {
+        applicationId 'me.gm.cleaner'
+        minSdk rootProject.ext.minSdk
+        targetSdk rootProject.ext.targetSdk
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled false
+        resourceConfigurations += ['en', 'zh-rCN', 'zh-rTW']
+        externalNativeBuild.cmake {
+            arguments '-DANDROID_STL=none'
+            cFlags '-DVERSION=' + rootProject.ext.versionCode
+        }
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName = "Cleaner_${defaultConfig.versionName}-${variant.buildType.name}.apk"
+        }
+    }
+    buildTypes {
+        debug {
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // android.buildTypes.release.ndk.debugSymbolLevel = { SYMBOL_TABLE | FULL }
+            ndk.debugSymbolLevel = 'full'
+        }
+    }
+    productFlavors {
+        flavorDimensions = ['channel']
+        github {
+            // Assigns this product flavor to the 'channel' flavor dimension.
+            dimension 'channel'
+        }
+        googleplay {
+            // Assigns this product flavor to the 'channel' flavor dimension.
+            dimension 'channel'
+        }
+    }
+    // Instead, use the bundle block to control which types of configuration APKs
+    // you want your app bundle to support.
+    bundle {
+        language {
+            // Specifies that the app bundle should not support
+            // configuration APKs for language resources. These
+            // resources are instead packaged with each base and
+            // feature APK.
+            enableSplit = false
+        }
+        density {
+            // This property is set to true by default.
+            enableSplit = true
+        }
+        abi {
+            // This property is set to true by default.
+            enableSplit = true
+        }
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+    buildFeatures {
+        viewBinding true
+        compose true
+        prefab true
+        buildConfig true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.6"
+    }
+    externalNativeBuild.cmake {
+        path 'src/main/cpp/CMakeLists.txt'
+        version '3.18.1'
+    }
+    packagingOptions.resources {
+        excludes += ['/META-INF/**', '/kotlin/**', '/org/**', '/okhttp3/**']
+    }
+    // https://developer.android.com/reference/tools/gradle-api/4.1/com/android/build/api/dsl/LintOptions
+    lint {
+        checkReleaseBuilds false
+    }
+    namespace 'me.gm.cleaner'
+}
+
+def optimizeApkRes() {
+    def aapt2 = Paths.get(project.android.sdkDirectory.path, 'build-tools', project.android.buildToolsVersion, 'aapt2')
+    def zip = Paths.get(
+            project.buildDir.path, 'intermediates', 'optimized_processed_res', 'githubRelease',
+            'resources-github-release-optimize.ap_'
+    )
+    def optimized = new File("${zip}.opt")
+    def cmd = exec {
+        commandLine aapt2, 'optimize',
+                '--collapse-resource-names',
+                '--resources-config-path', 'aapt2-resources.cfg',
+                '-o', optimized, zip
+        ignoreExitValue false
+    }
+    if (cmd.exitValue == 0) {
+        delete(zip)
+        optimized.renameTo(zip.toString())
+    }
+}
+
+afterEvaluate {
+    optimizeGithubReleaseResources.doLast {
+        optimizeApkRes()
+    }
+}
+
+dependencies {
+    implementation project(':aidl')
+    implementation project(':server')
+    implementation project(':shared')
+    compileOnly 'de.robv.android.xposed:api:82'
+
+    def composeBom = platform('androidx.compose:compose-bom:2023.10.01')
+    implementation composeBom
+    androidTestImplementation composeBom
+
+    implementation "androidx.activity:activity-ktx:1.8.2"
+    implementation "androidx.activity:activity-compose"
+    implementation 'androidx.appcompat:appcompat:1.7.0-alpha03'
+    implementation 'androidx.compose.animation:animation'
+    implementation 'androidx.compose.foundation:foundation'
+    implementation 'androidx.compose.material:material-icons-core'
+    implementation 'androidx.compose.material:material-icons-extended'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.ui:ui-viewbinding'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha13'
+    implementation "androidx.core:core-ktx:$rootProject.coreVersion"
+    implementation 'androidx.databinding:databinding-runtime:8.2.0'
+    implementation 'androidx.fragment:fragment-ktx:1.6.2'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+    implementation "androidx.preference:preference-ktx:$rootProject.preferenceVersion"
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation "androidx.security:security-crypto-ktx:$rootProject.securityCryptoVersion"
+    implementation "androidx.security:security-app-authenticator:$rootProject.securityAppAuthenticatorVersion"
+    implementation "androidx.security:security-identity-credential:$rootProject.securityIdentityCredentialVersion"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.work:work-runtime-ktx:2.9.0'
+    googleplayImplementation 'com.android.billingclient:billing-ktx:6.1.0'
+    implementation 'com.github.daniel-stoneuk:material-about-library:3.1.2'
+    implementation 'com.github.nanihadesuka:LazyColumnScrollbar:1.8.0'
+    def libsuVersion = '5.2.2'
+    implementation "com.github.topjohnwu.libsu:core:$libsuVersion"
+    implementation "com.github.topjohnwu.libsu:service:$libsuVersion"
+    implementation 'com.google.accompanist:accompanist-permissions:0.33.2-alpha'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation "com.google.flatbuffers:flatbuffers-java:$rootProject.flatbuffersVersion"
+    implementation "com.google.guava:guava:$rootProject.guavaVersion"
+    def appCenterVersion = '5.0.4'
+    githubImplementation "com.microsoft.appcenter:appcenter-analytics:$appCenterVersion"
+    githubImplementation "com.microsoft.appcenter:appcenter-crashes:$appCenterVersion"
+    implementation 'com.takisoft.preferencex:preferencex-colorpicker:1.1.0'
+    implementation 'dev.rikka.rikkax.preference:simplemenu-preference:1.0.3'
+    implementation 'dev.rikka.ndk.thirdparty:cxx:1.2.0'
+    implementation 'io.coil-kt:coil:2.5.0'
+    implementation 'io.github.ltttttttttttt:ComposeViews:1.5.10.1'
+    def appIconLoaderVersion = '1.5.0'
+    implementation "me.zhanghai.android.appiconloader:appiconloader:$appIconLoaderVersion"
+    implementation "me.zhanghai.android.appiconloader:appiconloader-coil:$appIconLoaderVersion"
+    implementation 'me.zhanghai.android.fastscroll:library:1.3.0'
+    def kotlinxCoroutinesVersion = '1.7.3'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinxCoroutinesVersion"
+    implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:4.3'
+    implementation 'org.tensorflow:tensorflow-lite:2.14.0'
+    implementation 'org.yaml:snakeyaml:1.33:android'
+
+    implementation 'com.android.tools.smali:smali-baksmali:3.0.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.12'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20220320'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

@@ -1,0 +1,76 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="@string/cleanup_title"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="@string/automatic_cleanup_key"
+            android:title="@string/automatic_cleanup_title"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="@string/enable_relatime_key"
+            android:summary="@string/enable_relatime_summary"
+            android:title="@string/enable_relatime_title"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/storage_redirect_title"
+        android:title="@string/storage_redirect_title"
+        app:iconSpaceReserved="false"
+        app:initialExpandedChildrenCount="5">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="@string/aggressively_prompt_for_reading_media_files_key"
+            android:summary="@string/aggressively_prompt_for_reading_media_files_summary"
+            android:title="@string/aggressively_prompt_for_reading_media_files_title"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="@string/open_wizard_by_default_key"
+            android:title="@string/open_wizard_by_default_title"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="@string/apps_type_marks_key"
+            android:summary="@string/apps_type_marks_summary"
+            android:title="@string/apps_type_marks_title"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="@string/share_key"
+            android:title="@string/share_title"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="@string/import_key"
+            android:title="@string/import_title"
+            app:iconSpaceReserved="false" />
+
+        <me.gm.cleaner.client.ui.EditMountRulesTemplatePreference
+            android:key="@string/edit_mount_rules_template_key"
+            android:title="@string/edit_mount_rules_template_title"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="@string/apply_mount_rules_template_to_key"
+            android:title="@string/apply_mount_rules_template_to_title"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="@string/apply_template_on_package_added_key"
+            android:title="@string/apply_template_on_package_added_title"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="@string/auto_logging_key"
+            android:summary="@string/auto_logging_summary"
+            android:title="@string/auto_logging_title"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

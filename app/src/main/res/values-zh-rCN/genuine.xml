@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="true">
+
+    <string name="unsupported_genuine_0">genuine: 仅供测试</string>
+    <string name="unsupported_genuine_1">false: 系统修改</string>
+    <string name="unsupported_genuine_2">fake: 签名错误</string>
+    <string name="unsupported_genuine_3">overlay: 资源覆盖</string>
+    <string name="unsupported_genuine_4">odex: 文件篡改</string>
+    <string name="unsupported_genuine_5">dex: 应用注入</string>
+    <string name="unsupported_genuine_6">proxy: 虚拟框架</string>
+    <string name="unsupported_genuine_7">error: 检查错误</string>
+    <string name="unsupported_genuine_8">fatal: 严重劫持</string>
+    <string name="unsupported_genuine_9">noapk: 非法安裝</string>
+
+</resources>

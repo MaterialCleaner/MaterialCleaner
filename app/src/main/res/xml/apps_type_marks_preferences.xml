@@ -1,0 +1,54 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:title="@string/apps_type_marks_repo_header"
+        app:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:defaultValue="@string/apps_type_marks_default"
+            android:key="@string/apps_type_marks_repo_key"
+            android:summary="@string/apps_type_marks_repo_summary"
+            android:title="@string/apps_type_marks_repo_title"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="@string/apps_type_marks_refresh_key"
+            android:title="@string/apps_type_marks_refresh_title"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="@string/upload_apps_type_marks_key"
+            android:title="@string/upload_apps_type_marks_title"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="@string/apps_type_marks_repo_correct_errors_key"
+            android:summary="@string/apps_type_marks_repo_correct_errors_summary"
+            android:title="@string/apps_type_marks_repo_correct_errors_title"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/auto_complete_by_record"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="@string/auto_complete_by_record_merge_key"
+            android:title="@string/auto_complete_by_record_merge_title"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="@string/auto_complete_by_record_respect_key"
+            android:title="@string/auto_complete_by_record_respect_title"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="@string/apply_online_rules_to_key"
+            android:summary="@string/apply_online_rules_to_summary"
+            android:title="@string/apply_online_rules_to_title"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

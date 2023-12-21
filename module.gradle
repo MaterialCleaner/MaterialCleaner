@@ -1,0 +1,19 @@
+ext {
+    /*
+       This name will be used in the name of the so file ("lib${moduleLibraryName}.so").
+    */
+    moduleLibraryName = "cleanerhooks"
+
+    /*
+       Magisk module ID
+       Since Magisk use it to distinguish different modules, you should never change it.
+    */
+    zygiskModuleId = "zygisk_" + moduleLibraryName
+
+    moduleName = "Cleaner Hooks"
+    moduleAuthor = "Green Mushroom"
+    moduleDescription = "Provide hooks for Cleaner. Requires Magisk 24.0+ and Zygisk enabled."
+    moduleVersion = "v1.8.4"
+    moduleVersionCode = Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
+    moduleUpdateJson = "https://materialcleaner.github.io/MaterialCleaner/releases/module.json"
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_start_or_stop"
+        android:icon="@drawable/ic_outline_start_24"
+        android:title="@string/action_start_or_stop"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_help"
+        android:title="@string/help"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_contact"
+        android:title="@string/contact"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_purchase"
+        android:title="@string/purchase"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/about"
+        app:showAsAction="never" />
+
+</menu>

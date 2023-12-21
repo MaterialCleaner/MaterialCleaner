@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="switchWidgetLayoutStyle" format="reference" />
+    <attr name="actionBarSizeAddTabHeight" format="dimension" />
+    <attr name="preferenceHeader" format="reference" />
+    <attr name="preferenceSummary" format="reference" />
+</resources>

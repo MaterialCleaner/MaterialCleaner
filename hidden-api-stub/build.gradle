@@ -1,0 +1,12 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    sourceCompatibility rootProject.ext.javaVersion
+    targetCompatibility rootProject.ext.javaVersion
+}
+
+dependencies {
+    implementation "androidx.annotation:annotation:1.5.0"
+}
