@@ -1,4 +1,4 @@
-package me.gm.cleaner.app.filepicker
+package me.gm.cleaner.browser.filepicker
 
 import android.app.Dialog
 import android.content.DialogInterface
@@ -10,18 +10,24 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import me.gm.cleaner.R
-import me.gm.cleaner.app.filepicker.FilePickerDialog.Companion.InputMode.Companion.INPUT_MODE_FILE_LIST
-import me.gm.cleaner.app.filepicker.FilePickerDialog.Companion.InputMode.Companion.INPUT_MODE_KEY
-import me.gm.cleaner.app.filepicker.FilePickerDialog.Companion.InputMode.Companion.INPUT_MODE_TEXT
-import me.gm.cleaner.app.filepicker.FilePickerDialog.Companion.SelectType.Companion.SELECT_FILE
-import me.gm.cleaner.app.filepicker.FilePickerDialog.Companion.SelectType.Companion.SELECT_FILE_AND_FOLDER
-import me.gm.cleaner.app.filepicker.FilePickerDialog.Companion.SelectType.Companion.SELECT_FOLDER
+import me.gm.cleaner.browser.VirtualFileSystemProvider
+import me.gm.cleaner.browser.VirtualFileSystemProvider.schemeRoot
+import me.gm.cleaner.browser.filepicker.FilePickerDialog.Companion.InputMode.Companion.INPUT_MODE_FILE_LIST
+import me.gm.cleaner.browser.filepicker.FilePickerDialog.Companion.InputMode.Companion.INPUT_MODE_KEY
+import me.gm.cleaner.browser.filepicker.FilePickerDialog.Companion.InputMode.Companion.INPUT_MODE_TEXT
+import me.gm.cleaner.browser.filepicker.FilePickerDialog.Companion.SelectType.Companion.SELECT_FILE_AND_FOLDER
+import me.gm.cleaner.browser.filepicker.FilePickerDialog.Companion.SelectType.Companion.SELECT_FOLDER
 import me.gm.cleaner.databinding.FilePickerDialogBinding
+import me.gm.cleaner.util.copy
+import java.nio.file.Path
 import java.util.function.Consumer
+import kotlin.io.path.Path
+import kotlin.io.path.isRegularFile
+import kotlin.io.path.pathString
 
 class FilePickerDialog : AppCompatDialogFragment() {
     private val viewModel: FilePickerViewModel by viewModels()
-    private val pendingViewModelActions: MutableList<Runnable> = mutableListOf()
+    private val pendingActions: MutableList<Runnable> = mutableListOf()
     private lateinit var pickerFragment: PickerFragment
 
     @InputMode
@@ -30,12 +36,12 @@ class FilePickerDialog : AppCompatDialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
-            val iterator = pendingViewModelActions.iterator()
+            val iterator = pendingActions.iterator()
             while (iterator.hasNext()) {
                 iterator.next().run()
                 iterator.remove()
             }
-            selectPath(viewModel.filePicker.path)
+            selectPath(viewModel.path)
         } else {
             inputMode = savedInstanceState.getInt(INPUT_MODE_KEY)
         }
@@ -43,7 +49,7 @@ class FilePickerDialog : AppCompatDialogFragment() {
 
     private fun handleAction(action: Runnable) {
         if (!isAdded) {
-            pendingViewModelActions += action
+            pendingActions += action
         } else {
             action.run()
         }
@@ -56,7 +62,7 @@ class FilePickerDialog : AppCompatDialogFragment() {
             .setView(binding.root)
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 viewModel.onPositiveButtonClickListeners.forEach { listener ->
-                    listener.accept(viewModel.filePicker.selected)
+                    viewModel.selected?.let { listener.accept(it) }
                 }
             }
             .setNegativeButton(android.R.string.cancel, null)
@@ -82,11 +88,10 @@ class FilePickerDialog : AppCompatDialogFragment() {
             startPickerFragment()
         }
 
-        viewModel.filePicker.selectedFlow.asLiveData().observe(this) { path ->
-            dialog.getButton(DialogInterface.BUTTON_POSITIVE).isEnabled = path.isNotEmpty()
-            binding.header.mtrlPickerHeaderSelectionText.text = path.ifEmpty {
-                getString(R.string.file_picker_unselected)
-            }
+        viewModel.selectedFlow.asLiveData().observe(this) { path ->
+            dialog.getButton(DialogInterface.BUTTON_POSITIVE).isEnabled = path != null
+            binding.header.mtrlPickerHeaderSelectionText.text =
+                path?.pathString ?: getString(R.string.file_picker_unselected)
         }
         return dialog
     }
@@ -98,36 +103,25 @@ class FilePickerDialog : AppCompatDialogFragment() {
 
     private fun startPickerFragment() {
         pickerFragment = when (inputMode) {
-            INPUT_MODE_FILE_LIST -> FileListFragment.newInstance(viewModel.filePicker)
-            INPUT_MODE_TEXT -> InputFragment.newInstance(viewModel.filePicker)
+            INPUT_MODE_FILE_LIST -> FileListFragment()
+            INPUT_MODE_TEXT -> InputFragment()
             else -> throw IllegalArgumentException()
         }
         childFragmentManager.commitNow {
             replace(R.id.picker_frame, pickerFragment)
         }
-        pickerFragment.addOnSelectionChangedListener { path ->
-            selectPath(path)
-        }
     }
 
-    private fun selectPath(path: String) {
-        val file = createFileModel(path)
-        if (viewModel.filePicker.select(file)) {
-            viewModel.filePicker.path = path
-            if (file.isFile) {
-                viewModel.filePicker.goUp(false)
+    private fun selectPath(path: Path) {
+        if (viewModel.select(path)) {
+            viewModel.path = path
+            if (path.isRegularFile()) {
+                viewModel.goUp(false)
             }
         } else {
             // The path is verified value, so it should be selected anyway.
-            file.isDirectory = true
-            file.isFile = true
-            viewModel.filePicker.select(file)
+            viewModel.selected = path
         }
-    }
-
-    override fun onStop() {
-        pickerFragment.clearOnSelectionChangedListeners()
-        super.onStop()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -136,7 +130,7 @@ class FilePickerDialog : AppCompatDialogFragment() {
     }
 
     /** The supplied listener is called when the user confirms a valid selection.  */
-    fun addOnPositiveButtonClickListener(onPositiveButtonClickListener: Consumer<String>) =
+    fun addOnPositiveButtonClickListener(onPositiveButtonClickListener: Consumer<Path>) =
         handleAction {
             viewModel.onPositiveButtonClickListeners.add(onPositiveButtonClickListener)
         }
@@ -144,7 +138,7 @@ class FilePickerDialog : AppCompatDialogFragment() {
     /**
      * Removes a listener previously added via [FilePickerDialog.addOnPositiveButtonClickListener].
      */
-    fun removeOnPositiveButtonClickListener(onPositiveButtonClickListener: Consumer<String>) =
+    fun removeOnPositiveButtonClickListener(onPositiveButtonClickListener: Consumer<Path>) =
         handleAction {
             viewModel.onPositiveButtonClickListeners.remove(onPositiveButtonClickListener)
         }
@@ -156,26 +150,28 @@ class FilePickerDialog : AppCompatDialogFragment() {
         viewModel.onPositiveButtonClickListeners.clear()
     }
 
+    private fun stringToPath(pathString: String): Path =
+        VirtualFileSystemProvider.getPath(Path(pathString).toUri().copy(scheme = schemeRoot))
+
     fun setPath(path: String) = handleAction {
-        viewModel.filePicker.path = path
+        viewModel.path = stringToPath(path)
     }
 
-    fun setRoot(root: String) = handleAction {
-        viewModel.filePicker.root = root
+    fun setRoots(roots: List<String>) = handleAction {
+        viewModel.roots = roots.map { stringToPath(it) }
     }
 
     fun setSelectType(@SelectType selectType: Int) = handleAction {
-        viewModel.filePicker.selectType = selectType
+        viewModel.selectType = selectType
     }
 
     companion object {
-        @IntDef(value = [SELECT_FILE, SELECT_FOLDER, SELECT_FILE_AND_FOLDER])
+        @IntDef(value = [SELECT_FOLDER, SELECT_FILE_AND_FOLDER])
         @Retention(AnnotationRetention.SOURCE)
         annotation class SelectType {
             companion object {
-                const val SELECT_FILE: Int = 0
-                const val SELECT_FOLDER: Int = 1
-                const val SELECT_FILE_AND_FOLDER: Int = 2
+                const val SELECT_FOLDER: Int = 0
+                const val SELECT_FILE_AND_FOLDER: Int = 1
             }
         }
 

@@ -1,4 +1,4 @@
-package me.gm.cleaner.app.filepicker
+package me.gm.cleaner.browser.filepicker
 
 import android.annotation.SuppressLint
 import android.content.Context

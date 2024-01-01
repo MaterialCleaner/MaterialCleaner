@@ -1,10 +1,9 @@
-package me.gm.cleaner.app.filepicker
+package me.gm.cleaner.browser.filepicker
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.lifecycle.asLiveData
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.GridLayoutManager
@@ -21,8 +20,8 @@ class FileListFragment : PickerFragment() {
     ): View {
         val binding = ListDialogBinding.inflate(inflater)
 
-        val fileListAdapter = FileListAdapter(requireContext(), filePicker)
-        val goUpAdapter = GoUpAdapter(filePicker)
+        val fileListAdapter = FileListAdapter(requireContext(), parentViewModel)
+        val goUpAdapter = GoUpAdapter(parentViewModel)
         val adapters = ConcatAdapter(fileListAdapter)
         val list = binding.recyclerView
         list.adapter = adapters
@@ -33,28 +32,15 @@ class FileListFragment : PickerFragment() {
             .build()
         list.overScrollIfContentScrollsPersistent()
         list.itemAnimator = null
-        filePicker.fileListFlow.asLiveData().observe(viewLifecycleOwner) { files ->
+        parentViewModel.fileListFlow.asLiveData().observe(viewLifecycleOwner) { files ->
             fileListAdapter.submitList(files) {
-                if (filePicker.canGoUp) {
+                if (parentViewModel.canGoUp) {
                     adapters.addAdapter(0, goUpAdapter)
                 } else {
                     adapters.removeAdapter(goUpAdapter)
                 }
             }
         }
-
-        filePicker.selectedFlow.asLiveData().observe(viewLifecycleOwner) { path ->
-            onSelectionChangedListeners.forEach { listener ->
-                listener.accept(path)
-            }
-        }
         return binding.root
-    }
-
-    companion object {
-
-        fun newInstance(filePicker: FilePicker): FileListFragment = FileListFragment().apply {
-            arguments = bundleOf(FILE_PICKER_KEY to filePicker)
-        }
     }
 }

@@ -1,4 +1,4 @@
-package me.gm.cleaner.app.filepicker
+package me.gm.cleaner.browser.filepicker
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -11,17 +11,24 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import me.gm.cleaner.R
 import me.gm.cleaner.databinding.FilePickerItemBinding
-import me.gm.cleaner.model.FileModel
 import me.gm.cleaner.util.textColorPrimary
-import java.io.File
+import kotlin.io.path.name
 
 class ViewHolder(val binding: FilePickerItemBinding) : RecyclerView.ViewHolder(binding.root)
 
-class FileListAdapter(context: Context, private val filePicker: FilePicker) :
+class FileListAdapter(context: Context, private val filePicker: FilePickerViewModel) :
     BaseKtListAdapter<FilePickerModel, ViewHolder>(CALLBACK) {
     private val folderBadge: Bitmap by lazy {
         AppCompatResources
             .getDrawable(context, R.drawable.ic_outline_folder_24)!!
+            .apply {
+                setTint(context.textColorPrimary.defaultColor)
+            }
+            .toBitmap()
+    }
+    private val linkBadge: Bitmap by lazy {
+        AppCompatResources
+            .getDrawable(context, R.drawable.outline_link_24)!!
             .apply {
                 setTint(context.textColorPrimary.defaultColor)
             }
@@ -45,20 +52,24 @@ class FileListAdapter(context: Context, private val filePicker: FilePicker) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val binding = holder.binding
         val model = getItem(position)
-        binding.title.text = model.file.path.substringAfterLast(File.separator)
-        if (model.file.isDirectory) {
+        binding.title.text = model.path.name
+        if (model.attrs.isDirectory) {
             binding.icon.setImageBitmap(folderBadge)
             binding.root.setOnClickListener {
-                filePicker.select(model.file)
-                filePicker.path = model.file.path
+                filePicker.select(model.path)
+                filePicker.path = model.path
             }
         } else {
-            binding.icon.setImageBitmap(fileBadge)
+            if (model.attrs.isSymbolicLink) {
+                binding.icon.setImageBitmap(linkBadge)
+            } else {
+                binding.icon.setImageBitmap(fileBadge)
+            }
             binding.root.setOnClickListener {
                 if (!model.isSelected) {
-                    filePicker.select(model.file)
+                    filePicker.select(model.path)
                 } else {
-                    filePicker.select(FileModel(filePicker.path, true, false))
+                    filePicker.select(filePicker.path)
                 }
             }
         }
@@ -69,7 +80,7 @@ class FileListAdapter(context: Context, private val filePicker: FilePicker) :
         private val CALLBACK = object : DiffUtil.ItemCallback<FilePickerModel>() {
             override fun areItemsTheSame(
                 oldItem: FilePickerModel, newItem: FilePickerModel
-            ): Boolean = oldItem.file.path == newItem.file.path
+            ): Boolean = oldItem.path == newItem.path
 
             override fun areContentsTheSame(
                 oldItem: FilePickerModel, newItem: FilePickerModel
@@ -78,7 +89,8 @@ class FileListAdapter(context: Context, private val filePicker: FilePicker) :
     }
 }
 
-class GoUpAdapter(private val filePicker: FilePicker) : RecyclerView.Adapter<ViewHolder>() {
+class GoUpAdapter(private val filePicker: FilePickerViewModel) :
+    RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
         FilePickerItemBinding.inflate(LayoutInflater.from(parent.context))
