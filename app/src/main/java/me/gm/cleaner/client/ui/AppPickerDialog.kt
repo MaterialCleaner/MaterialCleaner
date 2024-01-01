@@ -16,25 +16,21 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import me.gm.cleaner.R
 import me.gm.cleaner.databinding.AppPickerDialogBinding
 import me.gm.cleaner.util.overScrollIfContentScrollsPersistent
-import me.gm.cleaner.widget.recyclerview.fastscroll.useThemeStyle
 import me.gm.cleaner.util.submitListKeepPosition
+import me.gm.cleaner.widget.recyclerview.fastscroll.useThemeStyle
 import me.zhanghai.android.fastscroll.FastScrollerBuilder
 import java.util.function.Consumer
 import java.util.function.Supplier
 
 class AppPickerDialog : AppCompatDialogFragment() {
     private val viewModel: AppPickerViewModel by viewModels()
-    private val pendingViewModelActions: MutableList<Runnable> = mutableListOf()
+    private val pendingPreActions: MutableList<Runnable> = mutableListOf()
+    private val pendingPostActions: MutableList<Runnable> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
-            val iterator = pendingViewModelActions.iterator()
-            while (iterator.hasNext()) {
-                iterator.next().run()
-                iterator.remove()
-            }
-            viewModel.initAllApps()
+            viewModel.init(pendingPreActions, pendingPostActions)
         }
     }
 
@@ -86,19 +82,19 @@ class AppPickerDialog : AppCompatDialogFragment() {
             when (menuItem.itemId) {
                 R.id.menu_select_all -> {
                     viewModel.checkedApps += viewModel.showingApps
-                        .map { it.packageInfo.packageName }
+                        .map { it.packageInfo }
                 }
 
                 R.id.menu_invert_selection -> {
                     val partition = viewModel.showingApps.partition { it.isChecked }
                     viewModel.checkedApps = viewModel.checkedApps -
-                            partition.first.map { it.packageInfo.packageName }.toSet() +
-                            partition.second.map { it.packageInfo.packageName }
+                            partition.first.map { it.packageInfo }.toSet() +
+                            partition.second.map { it.packageInfo }
                 }
 
                 R.id.menu_unselect_all -> {
                     viewModel.checkedApps -= viewModel.showingApps
-                        .map { it.packageInfo.packageName }
+                        .map { it.packageInfo }
                 }
             }
             true
@@ -106,40 +102,57 @@ class AppPickerDialog : AppCompatDialogFragment() {
         popup.show()
     }
 
-    private fun handleAction(action: Runnable) {
+    private fun handlePreAction(action: Runnable) {
         if (!isAdded) {
-            pendingViewModelActions += action
+            pendingPreActions += action
+        } else {
+            action.run()
+        }
+    }
+
+    private fun handlePostAction(action: Runnable) {
+        if (!isAdded) {
+            pendingPostActions += action
         } else {
             action.run()
         }
     }
 
     /** The supplied listener is called when the user confirms a valid selection.  */
-    fun addOnPositiveButtonClickListener(onPositiveButtonClickListener: Consumer<Set<String>>) =
-        handleAction {
+    fun addOnPositiveButtonClickListener(onPositiveButtonClickListener: Consumer<Set<PackageInfo>>) =
+        handlePostAction {
             viewModel.onPositiveButtonClickListeners.add(onPositiveButtonClickListener)
         }
 
     /**
      * Removes a listener previously added via [AppPickerDialog.addOnPositiveButtonClickListener].
      */
-    fun removeOnPositiveButtonClickListener(onPositiveButtonClickListener: Consumer<Set<String>>) =
-        handleAction {
+    fun removeOnPositiveButtonClickListener(onPositiveButtonClickListener: Consumer<Set<PackageInfo>>) =
+        handlePostAction {
             viewModel.onPositiveButtonClickListeners.remove(onPositiveButtonClickListener)
         }
 
     /**
      * Removes all listeners added via [AppPickerDialog.addOnPositiveButtonClickListener].
      */
-    fun clearOnPositiveButtonClickListeners() = handleAction {
+    fun clearOnPositiveButtonClickListeners() = handlePostAction {
         viewModel.onPositiveButtonClickListeners.clear()
     }
 
-    fun setAllAppsSupplier(allAppsSupplier: Supplier<List<PackageInfo>>) = handleAction {
+    fun setAllAppsSupplier(allAppsSupplier: Supplier<List<PackageInfo>>) = handlePreAction {
         viewModel.allAppsSupplier = allAppsSupplier
     }
 
-    fun setSelection(checkedApps: Set<String>) = handleAction {
+    fun setSelectionApps(checkedApps: Set<PackageInfo>) = handlePostAction {
         viewModel.checkedApps = checkedApps
+    }
+
+    fun setSelection(checkedApps: Set<String>) = handlePostAction {
+        viewModel.checkedApps = checkedApps.asSequence()
+            .map { packageName ->
+                viewModel.allApps.firstOrNull { packageName == it.packageName }
+                    ?: PackageInfo().also { it.packageName = packageName }
+            }
+            .toSet()
     }
 }

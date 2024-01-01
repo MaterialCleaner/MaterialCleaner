@@ -15,20 +15,21 @@ import java.util.function.Consumer
 import java.util.function.Supplier
 
 class AppPickerViewModel(application: Application) : AndroidViewModel(application) {
-    val onPositiveButtonClickListeners: MutableSet<Consumer<Set<String>>> = mutableSetOf()
+    internal val onPositiveButtonClickListeners: MutableSet<Consumer<Set<PackageInfo>>> =
+        mutableSetOf()
 
-    private val _checkedAppsFlow: MutableStateFlow<Set<String>> = MutableStateFlow(emptySet())
-    var checkedApps: Set<String>
+    private val _checkedAppsFlow: MutableStateFlow<Set<PackageInfo>> = MutableStateFlow(emptySet())
+    var checkedApps: Set<PackageInfo>
         get() = _checkedAppsFlow.value
         set(value) {
             _checkedAppsFlow.value = value
         }
 
-    fun toggle(packageName: String) {
-        if (packageName in checkedApps) {
-            checkedApps -= packageName
+    fun toggle(packageInfo: PackageInfo) {
+        if (packageInfo in checkedApps) {
+            checkedApps -= packageInfo
         } else {
-            checkedApps += packageName
+            checkedApps += packageInfo
         }
     }
 
@@ -39,7 +40,7 @@ class AppPickerViewModel(application: Application) : AndroidViewModel(applicatio
             _filterTextFlow.value = value
         }
 
-    var allAppsSupplier: Supplier<List<PackageInfo>> = Supplier {
+    internal var allAppsSupplier: Supplier<List<PackageInfo>> = Supplier {
         application.packageManager.getInstalledPackages(0)
     }
     val allApps: List<PackageInfo> by lazy { allAppsSupplier.get() }
@@ -51,11 +52,11 @@ class AppPickerViewModel(application: Application) : AndroidViewModel(applicatio
         combine(_appsFlow, _filterTextFlow, _checkedAppsFlow) { apps, filterText, checkedApps ->
             val installedPackages = allApps.map { it.packageName }
             val uninstalledCheckedApps = checkedApps
-                .filter { it !in installedPackages }
-                .map { packageName ->
+                .filter { it.packageName !in installedPackages }
+                .map { packageInfo ->
                     AppPickerModel(
-                        PackageInfo().apply { this.packageName = packageName },
-                        packageName,
+                        packageInfo,
+                        packageInfo.packageName,
                         true
                     )
                 }
@@ -69,7 +70,7 @@ class AppPickerViewModel(application: Application) : AndroidViewModel(applicatio
             }
             sequence = sequence.sortedWith(collatorComparator { it.label })
             sequence = sequence.map {
-                if (it.isChecked != it.packageInfo.packageName in checkedApps) {
+                if (it.isChecked != it.packageInfo in checkedApps) {
                     it.copy(isChecked = !it.isChecked)
                 } else {
                     it
@@ -81,15 +82,17 @@ class AppPickerViewModel(application: Application) : AndroidViewModel(applicatio
             }
         }
 
-    fun initAllApps() {
+    fun init(pendingPreActions: List<Runnable>, pendingPostActions: List<Runnable>) {
         viewModelScope.launch(Dispatchers.Default) {
+            pendingPreActions.forEach { it.run() }
             _appsFlow.tryEmit(allApps.map { pi ->
                 AppPickerModel(
                     pi,
                     AppLabelCache.getPackageLabel(pi),
-                    pi.packageName in checkedApps
+                    pi in checkedApps
                 )
             })
+            pendingPostActions.forEach { it.run() }
         }
     }
 }

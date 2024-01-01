@@ -23,7 +23,7 @@ class AppPickerAdapter(private val viewModel: AppPickerViewModel) :
         binding.labelText.text = model.packageInfo.packageName
         binding.checkbox.isChecked = model.isChecked
         binding.root.setOnClickListener {
-            viewModel.toggle(model.packageInfo.packageName)
+            viewModel.toggle(model.packageInfo)
         }
     }
 
