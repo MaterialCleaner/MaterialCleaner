@@ -17,7 +17,7 @@ The app does use third-party services that may collect information used to ident
 Link to the privacy policy of third-party service providers used by the app
 
 *   [Google Play Services](https://www.google.com/policies/privacy/)
-*   [Visual Studio App Center](https://learn.microsoft.com/en-us/appcenter/sdk/data-collected)
+*   [Sentry](https://sentry.io/privacy/)
 
 **Log Data**
 
@@ -56,7 +56,7 @@ These Services do not address anyone under the age of 13. I do not knowingly col
 
 I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
 
-This policy is effective as of 2023-03-20
+This policy is effective as of 2024-08-05
 
 **Contact Us**
 
